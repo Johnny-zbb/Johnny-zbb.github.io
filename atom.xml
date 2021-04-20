@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-04-20T13:53:19.033Z</updated>
+  <updated>2021-04-20T15:52:57.988Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于AI的疫情智能分析系统（国赛二等奖）</title>
+    <link href="/2020/11/10/%E5%9F%BA%E4%BA%8EAI%E7%9A%84%E7%96%AB%E6%83%85%E6%99%BA%E8%83%BD%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>/2020/11/10/基于AI的疫情智能分析系统/</id>
+    <published>2020-11-10T14:16:01.000Z</published>
+    <updated>2021-04-20T15:52:57.988Z</updated>
+    
+    <summary type="html">
+    
+      Supermap大赛 国赛二等奖
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="作品" scheme="/tags/%E4%BD%9C%E5%93%81/"/>
+    
+  </entry>
   
   <entry>
     <title>我与树的对话</title>
@@ -35,6 +57,28 @@
       <category term="web" scheme="/tags/web/"/>
     
       <category term="生活" scheme="/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安徽广电虚拟智能系统（优秀建模奖、省二等奖）</title>
+    <link href="/2019/09/12/%E5%AE%89%E5%BE%BD%E5%B9%BF%E7%94%B5%E6%A8%A1%E5%9E%8B/"/>
+    <id>/2019/09/12/安徽广电模型/</id>
+    <published>2019-09-12T14:16:01.000Z</published>
+    <updated>2021-04-20T15:54:07.244Z</updated>
+    
+    <summary type="html">
+    
+      Esri大赛三维建模组的作品
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="作品" scheme="/tags/%E4%BD%9C%E5%93%81/"/>
     
   </entry>
   
