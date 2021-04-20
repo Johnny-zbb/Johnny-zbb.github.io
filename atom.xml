@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2021-04-20T05:55:44.126Z</updated>
+  <updated>2021-04-20T13:53:19.033Z</updated>
   <id>/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="/2019/12/12/%E6%88%91%E5%92%8C%E6%A0%91%E7%9A%84%E8%B0%88%E8%AF%9D/"/>
     <id>/2019/12/12/我和树的谈话/</id>
     <published>2019-12-12T14:16:01.000Z</published>
-    <updated>2021-04-20T05:55:44.126Z</updated>
+    <updated>2021-04-20T13:53:19.033Z</updated>
     
     <summary type="html">
     
@@ -34,7 +34,31 @@
     
       <category term="web" scheme="/tags/web/"/>
     
+      <category term="生活" scheme="/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《苹果酒屋的规则》</title>
+    <link href="/2019/01/15/%E8%8B%B9%E6%9E%9C%E9%85%92%E5%B1%8B%E7%9A%84%E8%A7%84%E5%88%99/"/>
+    <id>/2019/01/15/苹果酒屋的规则/</id>
+    <published>2019-01-15T14:16:01.000Z</published>
+    <updated>2021-04-20T14:13:43.774Z</updated>
+    
+    <summary type="html">
+    
+      阅读心得
+    
+    </summary>
+    
+      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
       <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="书评" scheme="/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
@@ -43,7 +67,7 @@
     <link href="/2018/12/12/Hexo-Theme-Sakura/"/>
     <id>/2018/12/12/Hexo-Theme-Sakura/</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2021-04-20T06:30:11.238Z</updated>
+    <updated>2021-04-20T13:46:51.718Z</updated>
     
     <summary type="html">
     
@@ -57,6 +81,54 @@
       <category term="web" scheme="/tags/web/"/>
     
       <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《局外人》</title>
+    <link href="/2018/03/26/%E5%B1%80%E5%A4%96%E4%BA%BA/"/>
+    <id>/2018/03/26/局外人/</id>
+    <published>2018-03-26T14:16:01.000Z</published>
+    <updated>2021-04-20T14:31:53.600Z</updated>
+    
+    <summary type="html">
+    
+      阅读心得
+    
+    </summary>
+    
+      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="书评" scheme="/tags/%E4%B9%A6%E8%AF%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《活着》</title>
+    <link href="/2017/10/19/%E6%B4%BB%E7%9D%80/"/>
+    <id>/2017/10/19/活着/</id>
+    <published>2017-10-19T10:16:01.000Z</published>
+    <updated>2021-04-20T14:34:33.994Z</updated>
+    
+    <summary type="html">
+    
+      阅读心得
+    
+    </summary>
+    
+      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="书评" scheme="/tags/%E4%B9%A6%E8%AF%84/"/>
     
   </entry>
   
