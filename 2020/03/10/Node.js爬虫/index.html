@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">安徽广电虚拟智能系统（优秀建模奖、省二等奖） | 欢迎来到雨中小屋~</title>
+  <title itemprop="name">爬虫程序(疫情数据为例) | 欢迎来到雨中小屋~</title>
   
     <link rel="shortcut icon" href="/favicon2.ico">
   
@@ -302,11 +302,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://z3.ax1x.com/2021/04/20/cH6va8.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cH6va8.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://z3.ax1x.com/2021/04/20/cH6xIS.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cH6xIS.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      安徽广电虚拟智能系统（优秀建模奖、省二等奖）</h1>
+      爬虫程序(疫情数据为例)</h1>
       <p class="entry-census">
         <span>
           <a href="hojun.cn">
@@ -318,7 +318,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-9-12<span class="bull">
+        2020-3-10<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -332,9 +332,459 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <iframe src="//player.bilibili.com/player.html?aid=84658460&bvid=BV197411e7Ey&high_quality=1&cid=144790192&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:500px"> </iframe>
+          <h2 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h2><p>安装好Node.js<br>新建一个文件夹<br>新建一个js文件 spider</p>
+<h2 id="代码时间"><a href="#代码时间" class="headerlink" title="代码时间"></a>代码时间</h2><h3 id="首先引入相关模块"><a href="#首先引入相关模块" class="headerlink" title="首先引入相关模块"></a>首先引入相关模块</h3><pre><code class="yml">// 目标是爬取丁香园网站的疫情数据
+// 在node端要有一个帮助我请求丁香园网站
+const superagent = require(&#39;superagent&#39;)
+const cheerio = require(&#39;cheerio&#39;)
+const mysql =require(&#39;mysql&#39;)
+const path = require(&#39;path&#39;)
+var schedule = require(&#39;node-schedule&#39;);
+//schedule模块用来执行定时任务 
+const request=require(&#39;request&#39;);
+</code></pre>
+<h3 id="创建数据库连接"><a href="#创建数据库连接" class="headerlink" title="创建数据库连接"></a>创建数据库连接</h3><pre><code class="yml">
+var connection ;
 
-<p>这个是抱队友大腿获得的省赛二等奖 和 国赛优秀建模奖，自己负责的不太多，不过这是我第一次获得科技竞赛的奖，比后来的获得国赛还开心，哈哈哈ヽ(ﾟ▽ﾟ)ノ</p>
+//创建数据库连接
+//创建一个函数handleError，负责防止mysql断连
+
+function handleError () {
+  connection = mysql.createConnection({
+    host:&#39;localhost&#39;,
+    port:端口号,//安装数据库默认端口号为3306
+    user:&quot;Mysql用户名&quot;,
+    password:&quot;Mysql密码&quot;,
+    database:&quot;你的数据库名称&quot;
+  });
+
+  //连接错误，2秒重试
+  connection.connect(function (err) {
+      if (err) {
+          console.log(&#39;error when connecting to db:&#39;, err);
+          setTimeout(handleError , 2000);
+      }
+  });
+
+  connection.on(&#39;error&#39;, function (err) {
+      console.log(&#39;db error&#39;, err);
+      // 如果是连接断开，自动重新连接
+      if (err.code === &#39;PROTOCOL_CONNECTION_LOST&#39;) {
+          handleError();
+      } else {
+          throw err;
+      }
+  });
+}
+handleError();//执行函数
+</code></pre>
+<h3 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h3><pre><code class="yml">//获取当天的时间
+var getToday=function(){
+var time=new Date();
+var year=time.getFullYear();
+var day=time.getDate();
+if(day&lt;10){
+  day=&#39;0&#39;+day;
+}
+var month=time.getMonth()+1;
+if(month&lt;10){
+  month=&#39;0&#39;+month;
+}
+var date=year+&#39;-&#39;+month+&#39;-&#39;+day;
+return date
+}
+</code></pre>
+<h3 id="第一个执行函数"><a href="#第一个执行函数" class="headerlink" title="第一个执行函数"></a>第一个执行函数</h3><p>1.这个定时任务是负责获取丁香园的数据，存入数据库中<br>2.先用superagent请求页面获得html<br>3.然后用cheerio解析html，可以通过jQuery的方法操作dom，获得里面的数据<br>4.获得数据之后，就写入数据库的alldata2数据表</p>
+<pre><code class="yml">
+var spider=function(){
+  // 1. 请求目标网站
+const url = `https://ncov.dxy.cn/ncovh5/view/pneumonia`
+superagent
+  .get(url)
+  .then(res =&gt; {
+    // console.log(res.text) // 相应的内容
+    // 浏览器可以解析html 但是node端不行
+    // 2. 去解析html字符串从里面提取对应疫情数据
+    const $ = cheerio.load(res.text) // 然后后我们就可以通过jQuery的方法操作dom
+    // 获取全国疫情信息数据
+
+    var $getAreaStat = $(&#39;#getAreaStat&#39;).html()
+
+    // console.log($getListByCountryTypeService1)
+    // 使用字符切割 正则匹配 eval函数
+    var dataObj = {}
+
+    eval($getAreaStat.replace(/window/g, &#39;dataObj&#39;))
+
+    //console.log(dataObj)
+    // 3. fs写入数据到本地
+        var date=getToday();
+////////////////////////////////////////////////////////////////////
+        var getAreaStat=dataObj.getAreaStat;
+        var arr=[]
+        getAreaStat.forEach(item =&gt; {   
+            var provinceCode=item.locationId;
+            var result=item.cities;
+            //console.log(result);
+            if(result.length==0){
+              var addSql = &#39;INSERT INTO alldata2(id,date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead) VALUES(0,?,?,?,?,?,?,?,?,?)&#39;;
+              var cityCode=provinceCode;
+              var province=item.provinceName;
+              var city=province;
+              var confirmed=item.confirmedCount;
+              var suspected=item.suspectedCount;
+              var cured=item.curedCount;
+              var dead=item.deadCount;
+              var addSqlParams = [date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead];
+              //alldata
+              connection.query(addSql, addSqlParams, function (err, result) {
+                  if (err) {
+                      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                      return;
+                  }
+              }); 
+            }else{
+              result.forEach(res=&gt;{
+              var addSql = &#39;INSERT INTO alldata2(id,date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead) VALUES(0,?,?,?,?,?,?,?,?,?)&#39;;
+              var cityCode=res.locationId
+              var province=item.provinceName;
+              var city=res.cityName;
+              var confirmed=res.confirmedCount;
+              var suspected=res.suspectedCount;
+              var cured=res.curedCount;
+              var dead=res.deadCount;
+              var addSqlParams = [date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead];
+              //alldata
+              connection.query(addSql, addSqlParams, function (err, result) {
+                  if (err) {
+                      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                      return;
+                  }
+              });   
+            })
+          }
+
+        })
+      console.log(&#39;写入数据成功！&#39;)
+
+////////////////////////////////////////////////////////////////////
+  })
+  .catch(err =&gt; {
+    throw err
+  })
+}
+</code></pre>
+<h3 id="第二个执行函数"><a href="#第二个执行函数" class="headerlink" title="第二个执行函数"></a>第二个执行函数</h3><p>1.读取之前写入alldata2数据表的数据<br>2.请求高德地图的api获取地理坐标<br>3.写入location2数据表</p>
+<pre><code class="yml">
+var spider2=function(){
+ var date=getToday();
+  var strings=&quot;SELECT * FROM `alldata2` WHERE date=&#39;&quot;+date+&quot;&#39;&quot;
+  connection.query(strings,  function (err, result) {
+  if (err) {
+      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+      return;
+  }else{
+      //console.log(result);
+      const sleep = function (ms){
+          return new Promise(resolve =&gt; setTimeout(resolve, ms))
+        }
+        const requestData = async function(){
+          for(var i=0;i&lt;result.length;i++){
+              var city=result[i].city;
+              var province=result[i].province;
+              var provinceCode=result[i].provinceCode;
+              var cityCode=result[i].cityCode;
+              var confirmed=result[i].confirmed;
+              var url=&#39;https://restapi.amap.com/v3/geocode/geo?address=&#39;+province+city+&#39;&amp;output=JSON&amp;key=你申请的地址匹配的key&#39;
+              //console.log(url);
+              request(encodeURI(url),function (error, response, body) {
+                  var data =JSON.parse(body)
+                  var location=data.geocodes[0].location;
+                  //console.log(location)
+                  var lng=location.split(&#39;,&#39;)[0];
+                  lng=parseFloat(lng)
+                  var lat=location.split(&#39;,&#39;)[1];
+                  lat=parseFloat(lat)
+                  var addSql2 = &#39;INSERT INTO location2(id,date,province,provinceCode,city,cityCode,confirmed,lng,lat) VALUES(0,?,?,?,?,?,?,?,?)&#39;;
+                  var addSqlParams2 = [date,province,provinceCode,city,cityCode,confirmed,lng,lat];
+                  connection.query(addSql2, addSqlParams2, function (err, result) {
+                      if (err) {
+                          console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                          return;
+                      }
+                  }); 
+              })
+              await sleep(200);//每一个循环休息0.2s}
+
+          }
+        }
+        requestData();
+  }
+  }); 
+
+}
+</code></pre>
+<h3 id="为两个执行函数创建定时任务"><a href="#为两个执行函数创建定时任务" class="headerlink" title="为两个执行函数创建定时任务"></a>为两个执行函数创建定时任务</h3><pre><code class="yml">
+var runSchedule =function (cb) {
+    // cron风格的配置：每天上午2点05分执行一次第一个函数
+    schedule.scheduleJob(&#39;0 5 2 * * *&#39;, function () {
+        var time=new Date();
+        var year=time.getFullYear();
+        var day=time.getDate();
+        var month=time.getMonth()+1;
+        console.log(&#39;spider定时任务执行一次&#39;+year+&#39;年&#39;+month+&#39;月&#39;+day+&#39;日&#39;);
+            cb &amp;&amp; cb();
+    });
+}
+
+//可以按照cron的格式设置
+var runSchedule2 =function (cb) {
+    // cron风格的配置：每天上午2点10分执行一次第二个函数
+    schedule.scheduleJob(&#39;0 10 2 * * *&#39;, function () {
+      var time=new Date();
+        var year=time.getFullYear();
+        var day=time.getDate();
+        var month=time.getMonth()+1;
+        console.log(&#39;spider2定时任务执行一次&#39;+year+&#39;年&#39;+month+&#39;月&#39;+day+&#39;日&#39;);
+          cb &amp;&amp; cb();
+    });
+}
+ runSchedule(spider);
+ runSchedule2(spider2);
+
+ console.log(&#39;定时任务已启动&#39;);
+</code></pre>
+<h3 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h3><pre><code class="spider.js文件代码">// // 目标是爬取丁香园网站的疫情数据
+// 在node端要有一个帮助我请求丁香园网站
+const superagent = require(&#39;superagent&#39;)
+const cheerio = require(&#39;cheerio&#39;)
+const mysql =require(&#39;mysql&#39;)
+const path = require(&#39;path&#39;)
+var schedule = require(&#39;node-schedule&#39;);
+//schedule模块用来执行定时任务 
+const request=require(&#39;request&#39;);
+// superagent.get(url).then()
+var connection ;
+
+//创建数据库连接
+function handleError () {
+  connection = mysql.createConnection({
+    host:&#39;localhost&#39;,
+    port:端口号,//安装数据库默认端口号为3306
+    user:&quot;Mysql用户名&quot;,
+    password:&quot;Mysql密码&quot;,
+    database:&quot;你的数据库名称&quot;
+  });
+
+  //连接错误，2秒重试
+  connection.connect(function (err) {
+      if (err) {
+          console.log(&#39;error when connecting to db:&#39;, err);
+          setTimeout(handleError , 2000);
+      }
+  });
+
+  connection.on(&#39;error&#39;, function (err) {
+      console.log(&#39;db error&#39;, err);
+      // 如果是连接断开，自动重新连接
+      if (err.code === &#39;PROTOCOL_CONNECTION_LOST&#39;) {
+          handleError();
+      } else {
+          throw err;
+      }
+  });
+}
+handleError();
+
+//获取当天的时间
+var getToday=function(){
+var time=new Date();
+var year=time.getFullYear();
+var day=time.getDate();
+if(day&lt;10){
+  day=&#39;0&#39;+day;
+}
+var month=time.getMonth()+1;
+if(month&lt;10){
+  month=&#39;0&#39;+month;
+}
+var date=year+&#39;-&#39;+month+&#39;-&#39;+day;
+return date
+}
+
+
+
+var spider=function(){
+  // 1. 请求目标网站
+const url = `https://ncov.dxy.cn/ncovh5/view/pneumonia`
+superagent
+  .get(url)
+  .then(res =&gt; {
+    // console.log(res.text) // 相应的内容
+    // 浏览器可以解析html 但是node端不行
+    // 2. 去解析html字符串从里面提取对应疫情数据
+    const $ = cheerio.load(res.text) // 然后后我们就可以通过jQuery的方法操作dom
+    // 获取全国疫情信息数据
+
+    var $getAreaStat = $(&#39;#getAreaStat&#39;).html()
+
+    // console.log($getListByCountryTypeService1)
+    // 使用字符切割 正则匹配 eval函数
+    var dataObj = {}
+
+    eval($getAreaStat.replace(/window/g, &#39;dataObj&#39;))
+
+    //console.log(dataObj)
+    // 3. fs写入数据到本地
+        var date=getToday();
+////////////////////////////////////////////////////////////////////
+        var getAreaStat=dataObj.getAreaStat;
+        var arr=[]
+        getAreaStat.forEach(item =&gt; {   
+            var provinceCode=item.locationId;
+            var result=item.cities;
+            //console.log(result);
+            if(result.length==0){
+              var addSql = &#39;INSERT INTO alldata2(id,date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead) VALUES(0,?,?,?,?,?,?,?,?,?)&#39;;
+              var cityCode=provinceCode;
+              var province=item.provinceName;
+              var city=province;
+              var confirmed=item.confirmedCount;
+              var suspected=item.suspectedCount;
+              var cured=item.curedCount;
+              var dead=item.deadCount;
+              var addSqlParams = [date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead];
+              //alldata
+              connection.query(addSql, addSqlParams, function (err, result) {
+                  if (err) {
+                      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                      return;
+                  }
+              }); 
+            }else{
+              result.forEach(res=&gt;{
+              var addSql = &#39;INSERT INTO alldata2(id,date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead) VALUES(0,?,?,?,?,?,?,?,?,?)&#39;;
+              var cityCode=res.locationId
+              var province=item.provinceName;
+              var city=res.cityName;
+              var confirmed=res.confirmedCount;
+              var suspected=res.suspectedCount;
+              var cured=res.curedCount;
+              var dead=res.deadCount;
+              var addSqlParams = [date,province,provinceCode,city,cityCode,confirmed,suspected,cured,dead];
+              //alldata
+              connection.query(addSql, addSqlParams, function (err, result) {
+                  if (err) {
+                      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                      return;
+                  }
+              });   
+            })
+          }
+
+        })
+      console.log(&#39;写入数据成功！&#39;)
+
+////////////////////////////////////////////////////////////////////
+  })
+  .catch(err =&gt; {
+    throw err
+  })
+}
+
+//spider();
+
+
+var spider2=function(){
+ var date=getToday();
+  var strings=&quot;SELECT * FROM `alldata2` WHERE date=&#39;&quot;+date+&quot;&#39;&quot;
+  connection.query(strings,  function (err, result) {
+  if (err) {
+      console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+      return;
+  }else{
+      //console.log(result);
+      const sleep = function (ms){
+          return new Promise(resolve =&gt; setTimeout(resolve, ms))
+        }
+        const requestData = async function(){
+          for(var i=0;i&lt;result.length;i++){
+              var city=result[i].city;
+              var province=result[i].province;
+              var provinceCode=result[i].provinceCode;
+              var cityCode=result[i].cityCode;
+              var confirmed=result[i].confirmed;
+              var url=&#39;https://restapi.amap.com/v3/geocode/geo?address=&#39;+province+city+&#39;&amp;output=JSON&amp;key=a36e6768d9262fcb339a50ce016a5caa&#39;
+              //console.log(url);
+              request(encodeURI(url),function (error, response, body) {
+                  var data =JSON.parse(body)
+                  var location=data.geocodes[0].location;
+                  //console.log(location)
+                  var lng=location.split(&#39;,&#39;)[0];
+                  lng=parseFloat(lng)
+                  var lat=location.split(&#39;,&#39;)[1];
+                  lat=parseFloat(lat)
+                  var addSql2 = &#39;INSERT INTO location2(id,date,province,provinceCode,city,cityCode,confirmed,lng,lat) VALUES(0,?,?,?,?,?,?,?,?)&#39;;
+                  var addSqlParams2 = [date,province,provinceCode,city,cityCode,confirmed,lng,lat];
+                  connection.query(addSql2, addSqlParams2, function (err, result) {
+                      if (err) {
+                          console.log(&#39;[INSERT ERROR-] - &#39;, err.message);
+                          return;
+                      }
+                  }); 
+              })
+              await sleep(200);//每一个循环休息0.2s}
+
+          }
+        }
+        requestData();
+  }
+  }); 
+
+}
+
+//spider2();
+
+
+// 创建两个定时任务，第一个任务执行spider函数爬取数据存到数据库中
+// 第二个定时任务执行spider2函数，将数据库中的爬取数据 读取出来进行处理，添加地理坐标，再次存到数据库中，获得有地理坐标的数据
+var runSchedule =function (cb) {
+    // cron风格的配置：每天上午两点05分执行一次
+    schedule.scheduleJob(&#39;0 5 2 * * *&#39;, function () {
+        var time=new Date();
+        var year=time.getFullYear();
+        var day=time.getDate();
+        var month=time.getMonth()+1;
+        console.log(&#39;spider定时任务执行一次&#39;+year+&#39;年&#39;+month+&#39;月&#39;+day+&#39;日&#39;);
+            cb &amp;&amp; cb();
+    });
+}
+
+//可以按照cron的格式设置
+var runSchedule2 =function (cb) {
+    // cron风格的配置：每天上午2.10点执行一次
+    schedule.scheduleJob(&#39;0 10 2 * * *&#39;, function () {
+      var time=new Date();
+        var year=time.getFullYear();
+        var day=time.getDate();
+        var month=time.getMonth()+1;
+        console.log(&#39;spider2定时任务执行一次&#39;+year+&#39;年&#39;+month+&#39;月&#39;+day+&#39;日&#39;);
+          cb &amp;&amp; cb();
+    });
+}
+ runSchedule(spider);
+ runSchedule2(spider2);
+
+ console.log(&#39;定时任务已启动&#39;);
+
+
+</code></pre>
+<h2 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h2><p>在文件夹空白处，按住键盘ctrl键+鼠标右键  打开cmd命令行：<br>输入</p>
+<pre><code class="cmd">cnmp i //安装依赖 也就是开头说的库
+node spider //安装完所有依赖，执行程序，不关闭cmd就会一直每天爬取了
+
+</code></pre>
+<h2 id="数据表格式"><a href="#数据表格式" class="headerlink" title="数据表格式"></a>数据表格式</h2><p><a href="https://imgtu.com/i/cbmQ1I" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/21/cbmQ1I.png" alt="cbmQ1I.png"></a><br><a href="https://imgtu.com/i/cbmM9A" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/04/21/cbmM9A.png" alt="cbmM9A.png"></a></p>
 
         </div>
         <!-- .entry-content -->
@@ -366,15 +816,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/2019/12/12/我和树的谈话/" rel="prev">
+            <a href="/2020/11/10/基于AI的疫情智能分析系统/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHaAht.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cHaAht.png">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHcFrq.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cHcFrq.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                我与树的对话</h3>
+                基于AI的疫情智能分析系统（国赛二等奖）</h3>
                 <hr>
               </div>
             </a>
@@ -384,15 +834,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/2019/01/15/苹果酒屋的规则/" rel="next">
+            <a href="/2019/12/12/我和树的谈话/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHaC0H.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cHaC0H.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHaAht.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cHaAht.png">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                《苹果酒屋的规则》</h3>
+                我与树的对话</h3>
                 <hr>
               </div>
             </a>
