@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Vue笔记 | 欢迎来到雨中小屋~</title>
+  
+    <link rel="shortcut icon" href="/favicon2.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "雨中小屋";
+  mashiro_option.author_name = "小屋";
+  mashiro_option.site_url = "";
+  mashiro_option.v_appId = "GdkxnYAVmodNOxeXOHgI1wtJ-gzGzoHsz";
+  mashiro_option.v_appKey = "8o4jII7ObNKPoTKub7QyYjuR";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://z3.ax1x.com/2021/04/20/cHcCxs.jpg,https://z3.ax1x.com/2021/04/20/cH6OqP.jpg,https://z3.ax1x.com/2021/04/20/cH6qKI.png,https://z3.ax1x.com/2021/04/20/cH6HxA.jpg,https://z3.ax1x.com/2021/04/20/cHaP7d.jpg,https://z3.ax1x.com/2021/04/20/cH655D.jpg".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="">
+          <img src="https://z3.ax1x.com/2021/04/20/cHBToQ.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="https://github.com/Johnny-zbb" target="_blank" class="social-github" title="github">
+                    <img src="https://z3.ax1x.com/2021/04/20/cHaec8.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/" target="_blank" class="social-github" title="sina">
+                    <img src="https://z3.ax1x.com/2021/04/20/cHaung.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://music.163.com/#/user/home?id=646228379" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://z3.ax1x.com/2021/04/20/cHaKBQ.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://www.zhihu.com/people/zheng-yu-49-56-14" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://z3.ax1x.com/2021/04/20/cHaM7j.png">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">雨中</span>
+            <span class="shironeko">小屋</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://z3.ax1x.com/2021/04/20/cHciMn.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHciMn.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Vue笔记</h1>
+      <p class="entry-census">
+        <span>
+          <a href="hojun.cn">
+            <img src="https://z3.ax1x.com/2021/04/20/cHBToQ.png">
+          </a>
+        </span>
+        <span>
+          <a href="hojun.cn">Johnny Zhu</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-12-12<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="Vue实战"><a href="#Vue实战" class="headerlink" title="Vue实战"></a>Vue实战</h1><h2 id="1-Vue-引言"><a href="#1-Vue-引言" class="headerlink" title="1. Vue 引言"></a>1. Vue 引言</h2><p><img src="Vue%E5%AE%9E%E6%88%98.assets/image-20210129104929487.png" alt="image-20210129104929487"></p>
+<blockquote>
+<p><code>渐进式</code> JavaScript 框架   –摘自官网</p>
+</blockquote>
+<pre><code class="markdown"># 渐进式
+   1. 易用  html css javascript
+   2. 高效  开发前端页面 非常高效 
+   3. 灵活  开发灵活 多样性
+
+# 总结
+        Vue 是一个javascript 框架 js 简化页面js操作
+        bootstrap 是一个css框架  封装css
+
+# 后端服务端开发人员: 
+        页面标签  dom  jquery js document.getElementById(&quot;xxx&quot;)
+        Vue 渐进式javascript框架: 让我们通过操作很少的DOM,甚至不需要操作页面中任何DOM元素,就很容易的完成数据和视图绑定 ====&gt; 双向绑定 MVVM  
+
+        注意: 日后在使用Vue过程中页面中不要在引入Jquery框架
+
+        html css---&gt;javascript(document.getElementById()...) -----&gt; jquery($(&quot;#xx&quot;)) 
+                ----&gt; angularjs -----&gt; Vue(前后端分离架构核心)
+         Vue 前端系统     &lt;---JSON----&gt;  后台系统springcloud
+         19年  full stack  全栈式开发工程师
+
+# Vue 作者
+     尤雨溪   国内的    
+</code></pre>
+<hr>
+<h2 id="2-Vue入门"><a href="#2-Vue入门" class="headerlink" title="2. Vue入门"></a>2. Vue入门</h2><h3 id="2-1-下载Vuejs"><a href="#2-1-下载Vuejs" class="headerlink" title="2.1    下载Vuejs"></a>2.1    下载Vuejs</h3><pre><code class="js">//开发版本:
+    &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+
+//生产版本:
+    &lt;!-- 生产环境版本，优化了尺寸和速度 --&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="2-2-Vue第一个入门应用"><a href="#2-2-Vue第一个入门应用" class="headerlink" title="2.2 Vue第一个入门应用"></a>2.2 Vue第一个入门应用</h3><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+        {{ msg }}  {{username}} {{pwd}}
+
+        &lt;br&gt;
+        &lt;span&gt;
+            {{ username }}
+            &lt;h1&gt;{{ msg }}&lt;/h1&gt;
+        &lt;/span&gt;
+
+   &lt;/div&gt;
+        &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+            el:&quot;#app&quot;,  //element 用来给Vue实例定义一个作用范围
+            data:{      //用来给Vue实例定义一些相关数据
+                msg:&quot;百知欢迎你,期待你的加入!&quot;,
+                username:&quot;hello Vue!&quot;,
+                pwd :&quot;12345&quot;,
+            },
+        });
+    &lt;/script&gt;    
+
+
+</code></pre>
+<pre><code class="markdown"># 总结:
+            1.vue实例(对象)中el属性:     代表Vue的作用范围  日后在Vue的作用范围内都可以使用Vue的语法
+            2.vue实例(对象)中data属性: 用来给Vue实例绑定一些相关数据, 绑定的数据可以通过{{变量名}}在Vue作用范围内取出
+            3.在使用{{}}进行获取data中数据时,可以在{{}}中书写表达式,运算符,调用相关方法,以及逻辑运算等
+            4.el属性中可以书写任意的CSS选择器[jquery选择器],但是在使用Vue开发是推荐使用 id选择器  注意: el属性值不能指定body或html标签
+</code></pre>
+<hr>
+<h2 id="3-v-text和v-html"><a href="#3-v-text和v-html" class="headerlink" title="3. v-text和v-html"></a>3. v-text和v-html</h2><h3 id="3-1-v-text"><a href="#3-1-v-text" class="headerlink" title="3.1 v-text"></a>3.1 v-text</h3><blockquote>
+<p><code>v-text</code>:用来获取data中数据将数据以文本的形式渲染到指定标签内部             类似于javascript 中 innerText</p>
+</blockquote>
+<pre><code class="html">        &lt;div id=&quot;app&quot; class=&quot;aa&quot;&gt;
+        &lt;span &gt;{{ message }}&lt;/span&gt;
+        &lt;span v-text=&quot;message&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+            el:&quot;#app&quot;,
+            data:{
+                message:&quot;百知欢迎您&quot;
+            }
+        })
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结
+            1.{{}}(插值表达式)和v-text获取数据的区别在于 
+                a.使用v-text取值会将标签中原有的数据覆盖 使用插值表达式的形式不会覆盖标签原有的数据
+                b.使用v-text可以避免在网络环境较差的情况下出现插值闪烁
+</code></pre>
+<h3 id="3-2-v-html"><a href="#3-2-v-html" class="headerlink" title="3.2 v-html"></a>3.2 v-html</h3><blockquote>
+<p><code>v-html</code>:用来获取data中数据将数据中含有的html标签先解析在渲染到指定标签的内部  类似于javascript中 innerHTML</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot; class=&quot;aa&quot;&gt;
+        &lt;span&gt;{{message}}&lt;/span&gt;
+        &lt;br&gt;
+        &lt;span v-text=&quot;message&quot;&gt;&lt;/span&gt;
+
+        &lt;br&gt;
+        &lt;span v-html=&quot;message&quot;&gt;xxxxxx&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+            el:&quot;#app&quot;,
+            data:{
+                message:&quot;&lt;a href=&#39;&#39;&gt;百知欢迎您&lt;/a&gt;&quot;
+            }
+        })
+    &lt;/script&gt;
+</code></pre>
+<hr>
+<h2 id="4-vue中事件绑定-v-on"><a href="#4-vue中事件绑定-v-on" class="headerlink" title="4.vue中事件绑定(v-on)"></a>4.vue中事件绑定(v-on)</h2><h3 id="4-1-绑定事件基本语法"><a href="#4-1-绑定事件基本语法" class="headerlink" title="4.1 绑定事件基本语法"></a>4.1 绑定事件基本语法</h3><pre><code class="html">        &lt;div id=&quot;app&quot;&gt;
+        &lt;h2&gt;{{message}}&lt;/h2&gt;
+        &lt;h2 v-text=&quot;message&quot;&gt;&lt;/h2&gt;
+        &lt;h2&gt;年龄:{{ age }}&lt;/h2&gt;
+        &lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;点我改变年龄&quot; v-on:click=&quot;changeage&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+            el:&quot;#app&quot;,
+            data:{
+                message:&quot;hello 欢迎来到百知课堂!&quot;,
+                age:23,
+            },
+            methods:{  //methods 用来定义vue中时间
+                changeage:function(){
+                    alert(&#39;点击触发&#39;);
+                }
+            }
+        })
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+        事件  事件源:发生事件dom元素  事件: 发生特定的动作  click....  监听器  发生特定动作之后的事件处理程序 通常是js中函数
+        1.在vue中绑定事件是通过v-on指令来完成的 v-on:事件名 如  v-on:click
+        2.在v-on:事件名的赋值语句中是当前事件触发调用的函数名
+        3.在vue中事件的函数统一定义在Vue实例的methods属性中
+        4.在vue定义的事件中this指的就是当前的Vue实例,日后可以在事件中通过使用this获取Vue实例中相关数据
+</code></pre>
+<h3 id="4-2-Vue中事件的简化语法"><a href="#4-2-Vue中事件的简化语法" class="headerlink" title="4.2 Vue中事件的简化语法"></a>4.2 Vue中事件的简化语法</h3><pre><code class="html">        &lt;div id=&quot;app&quot;&gt;
+        &lt;h2&gt;{{ age }}&lt;/h2&gt;
+        &lt;input type=&quot;button&quot; value=&quot;通过v-on事件修改年龄每次+1&quot; v-on:click=&quot;changeage&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;通过@绑定时间修改年龄每次-1&quot; @click=&quot;editage&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+           el:&quot;#app&quot;,  //element: 用来指定vue作用范围
+           data:{
+               age:23,
+           },    //data   : 用来定义vue实例中相关数据
+           methods:{
+               changeage:function(){
+                   this.age++;
+               },
+               editage:function(){
+                   this.age--;
+               }
+
+           }  //methods: 用来定义事件的处理函数
+        });
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+            1.日后在vue中绑定事件时可以通过@符号形式 简化  v-on 的事件绑定
+</code></pre>
+<h3 id="4-3-Vue事件函数两种写法"><a href="#4-3-Vue事件函数两种写法" class="headerlink" title="4.3 Vue事件函数两种写法"></a>4.3 Vue事件函数两种写法</h3><pre><code class="html">        &lt;div id=&quot;app&quot;&gt;
+        &lt;span&gt;{{count}}&lt;/span&gt;
+        &lt;input type=&quot;button&quot; value=&quot;改变count的值&quot; @click=&quot;changecount&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+           el:&quot;#app&quot;,
+           data:{
+               count:1,
+           },
+           methods:{
+               /*changecount:function(){
+                   this.count++;
+               }*/
+               changecount(){
+                   this.count++;
+               }
+           }
+        });
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+            1.在Vue中事件定义存在两种写法  一种是 函数名:function(){}  推荐    一种是  函数名(){} 推荐
+</code></pre>
+<h3 id="4-4-Vue事件参数传递"><a href="#4-4-Vue事件参数传递" class="headerlink" title="4.4 Vue事件参数传递"></a>4.4 Vue事件参数传递</h3><pre><code class="html">        &lt;div id=&quot;app&quot;&gt;
+        &lt;span&gt;{{count}}&lt;/span&gt;
+        &lt;input type=&quot;button&quot; value=&quot;改变count为指定的值&quot; @click=&quot;changecount(23,&#39;xiaohei&#39;)&quot;&gt;
+    &lt;/div&gt;
+
+    &lt;!--引入vue.js--&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const app = new Vue({
+           el:&quot;#app&quot;,
+           data:{
+               count:1,
+           },
+           methods:{
+               //定义changecount
+               changecount(count,name){
+                   this.count = count;
+                   alert(name);
+               }
+
+           }
+        });
+    &lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+            1.在使用事件时,可以直接在事件调用出给事件进行参数传递,在事件定义出通过定义对应变量接收传递的参数
+</code></pre>
+<hr>
+<h2 id="5-v-show-v-if-v-bind"><a href="#5-v-show-v-if-v-bind" class="headerlink" title="5.v-show v-if v-bind"></a>5.v-show v-if v-bind</h2><h3 id="5-1-v-show"><a href="#5-1-v-show" class="headerlink" title="5.1 v-show"></a>5.1 v-show</h3><blockquote>
+<p><code>v-show</code>:用来控制页面中某个标签元素是否展示        底层使用控制是 display 属性</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;!--
+        v-show: 用来控制标签展示还是隐藏的
+    --&gt;
+    &lt;h2 v-show=&quot;false&quot;&gt;百知教育欢迎你的加入!&lt;/h2&gt;
+    &lt;h2 v-show=&quot;show&quot;&gt;百知教育欢迎你的加入这是vue中定义变量true!&lt;/h2&gt;
+    &lt;input type=&quot;button&quot; value=&quot;展示隐藏标签&quot; @click=&quot;showmsg&quot;&gt;
+
+&lt;/div&gt;
+&lt;!--引入vue.js--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    const app = new Vue({
+        el:&quot;#app&quot;,
+        data:{
+            show:false,
+        },
+        methods:{
+            //定义时间
+            showmsg(){
+               this.show =  !this.show;
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结
+            1.在使用v-show时可以直接书写boolean值控制元素展示,也可以通过变量控制标签展示和隐藏
+            2.在v-show中可以通过boolean表达式控制标签的展示和隐藏
+</code></pre>
+<h3 id="5-2-v-if"><a href="#5-2-v-if" class="headerlink" title="5.2 v-if"></a>5.2 v-if</h3><blockquote>
+<p><code>v-if</code>: 用来控制页面元素是否展示                底层控制是DOM元素    操作DOM</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;h2 v-if=&quot;false&quot;&gt;百知教育&lt;/h2&gt;
+    &lt;h2 v-if=&quot;show&quot;&gt;百知教育欢迎你的加入&lt;/h2&gt;
+&lt;/div&gt;
+&lt;!--引入vue.js--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    const app = new Vue({
+        el:&quot;#app&quot;,
+        data:{
+            show:false
+        },
+        methods:{
+
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+<h3 id="5-3-v-bind"><a href="#5-3-v-bind" class="headerlink" title="5.3 v-bind"></a>5.3 v-bind</h3><blockquote>
+<p><code>v-bind</code>: 用来绑定标签的属性从而通过vue动态修改标签的属性</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;img width=&quot;300&quot; v-bind:title=&quot;msg&quot; v-bind:class=&quot;{aa:showCss}&quot;  src=&quot;baizhilogo.jpg&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;!--引入vue.js--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+
+    const app = new Vue({
+        el:&quot;#app&quot;,
+        data:{
+            msg:&quot;百知教育官方logo!!!!&quot;,
+            showCss:true,
+        },
+        methods:{
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+<h3 id="5-4-v-bind-简化写法"><a href="#5-4-v-bind-简化写法" class="headerlink" title="5.4 v-bind 简化写法"></a>5.4 v-bind 简化写法</h3><blockquote>
+<p>​    vue为了方便我们日后绑定标签的属性提供了对属性绑定的简化写法如 <code>v-bind:属性名</code> 简化之后 <code>:属性名</code></p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;img width=&quot;300&quot; :title=&quot;msg&quot; :class=&quot;{aa:showCss}&quot;  :src=&quot;src&quot; alt=&quot;&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;动态控制加入样式&quot; @click=&quot;addCss&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;改变图片&quot; @click=&quot;changeSrc&quot;&gt;
+&lt;/div&gt;
+&lt;!--引入vue.js--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+
+    const app = new Vue({
+        el:&quot;#app&quot;,
+        data:{
+            msg:&quot;百知教育官方logo!!!!&quot;,
+            showCss:true,
+            src:&quot;https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583490365568&amp;di=52a82bd614cd4030f97ada9441bb2d0e&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.kanzhun.com%2Fimages%2Flogo%2F20160714%2F820a68f65b4e4a3634085055779c000c.jpg&quot;
+        },
+        methods:{
+            addCss(){
+                this.showCss= !this.showCss;
+            },
+            changeSrc(){
+                this.src = &quot;https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1925088662,1336364220&amp;fm=26&amp;gp=0.jpg&quot;;
+            }
+        }
+    })
+&lt;/script&gt;
+</code></pre>
+<hr>
+<h2 id="6-v-for的使用"><a href="#6-v-for的使用" class="headerlink" title="6.v-for的使用"></a>6.v-for的使用</h2><blockquote>
+<p><code>v-for</code>: 作用就是用来对对象进行遍历的(数组也是对象的一种)</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+
+    &lt;span&gt;{{ user.name }} {{ user.age }}&lt;/span&gt;
+    &lt;br&gt;
+    &lt;!--
+       通过v-for遍历对象
+    --&gt;
+    &lt;span v-for=&quot;(value,key,index) in user&quot;&gt;
+        {{index}} : {{key}} : {{value}}
+    &lt;/span&gt;
+
+    &lt;!--
+        通过v-for遍历数组
+    --&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;a,index in arr&quot; &gt;
+            {{index}} {{a}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!--
+        通过v-for遍历数组中对象
+        :key 便于vue内部做重用和排序
+    --&gt;
+    &lt;ul&gt;
+        &lt;li v-for=&quot;user,index in users&quot; :key=&quot;user.id&quot;&gt;
+            {{index+1}} {{ user.name }}  === {{ user.age }} ==== {{ user.content }}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;!--引入vue--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            user:{name:&quot;小陈&quot;,age:23},
+            arr:[&quot;北京校区&quot;, &quot;天津校区&quot;, &quot;河南校区&quot;],
+            users:[
+                {id:&quot;1&quot;,name:&quot;xiaochen&quot;,age:23,content:&quot;我曾经也是一个单纯的少年!&quot;},
+                {id:&quot;2&quot;,name:&quot;小白&quot;,age:23,content:&quot;我曾经是一个邪恶的少年!&quot;},
+            ]
+        },
+        methods: {}
+    });
+&lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结
+    1.在使用v-for的时候一定要注意加入:key 用来给vue内部提供重用和排序的唯一key 
+</code></pre>
+<hr>
+<h2 id="7-v-model-双向绑定"><a href="#7-v-model-双向绑定" class="headerlink" title="7 .v-model 双向绑定"></a>7 .v-model 双向绑定</h2><blockquote>
+<p><code>v-model</code>: 作用用来绑定标签元素的值与vue实例对象中data数据保持一致,从而实现双向的数据绑定机制</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;input type=&quot;text&quot; v-model=&quot;message&quot;&gt;
+    &lt;span&gt;{{message}}&lt;/span&gt;
+    &lt;hr&gt;
+    &lt;input type=&quot;button&quot; value=&quot;改变Data中值&quot; @click=&quot;changeValue&quot;&gt;
+&lt;/div&gt;
+&lt;!--引入vue--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            message:&quot;&quot;
+        },
+        methods: {
+            changeValue(){
+                this.message=&#39;百知教育!&#39;;
+            }
+        }
+    });
+&lt;/script&gt;
+</code></pre>
+<pre><code class="markdown"># 总结
+        1.使用v-model指令可以实现数据的双向绑定 
+        2.所谓双向绑定 表单中数据变化导致vue实例data数据变化   vue实例中data数据的变化导致表单中数据变化 称之为双向绑定
+
+# MVVM架构  双向绑定机制
+    Model: 数据  Vue实例中绑定数据
+
+    VM:   ViewModel  监听器
+
+    View:  页面  页面展示的数据
+</code></pre>
+<hr>
+<h2 id="8-事件修饰符"><a href="#8-事件修饰符" class="headerlink" title="8. 事件修饰符"></a>8. 事件修饰符</h2><blockquote>
+<p><code>修饰符</code>: 作用用来和事件连用,用来决定事件触发条件或者是阻止事件的触发机制</p>
+</blockquote>
+<pre><code class="markdown"># 1.常用的事件修饰符
+    .stop    停止
+    .prevent 阻止
+    .self    独自
+    .once    一次
+</code></pre>
+<h3 id="8-1-stop事件修饰符"><a href="#8-1-stop事件修饰符" class="headerlink" title="8.1 stop事件修饰符"></a>8.1 stop事件修饰符</h3><blockquote>
+<p>用来阻止事件冒泡</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;div class=&quot;aa&quot; @click=&quot;divClick&quot;&gt;
+        &lt;!--用来阻止事件冒泡--&gt;
+        &lt;input type=&quot;button&quot; value=&quot;按钮&quot; @click.stop=&quot;btnClick&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--引入vue--&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  const app = new Vue({
+    el: &quot;#app&quot;,
+    data: {},
+    methods: {
+      btnClick(){
+        alert(&#39;button被点击了&#39;);
+      },
+      divClick(){
+        alert(&#39;div被点击了&#39;);
+      }
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+<h3 id="8-2-prevent-事件修饰符"><a href="#8-2-prevent-事件修饰符" class="headerlink" title="8.2 prevent 事件修饰符"></a>8.2 prevent 事件修饰符</h3><blockquote>
+<p>用来阻止标签的默认行为</p>
+</blockquote>
+<pre><code class="html">&lt;!--用来阻止事件的默认行为--&gt;
+&lt;a href=&quot;http://www.baizhibest.com/&quot; @click.prevent=&quot;aClick&quot;&gt;百知教育&lt;/a&gt;
+</code></pre>
+<h3 id="8-3-self-事件修饰符"><a href="#8-3-self-事件修饰符" class="headerlink" title="8.3 self 事件修饰符"></a>8.3 self 事件修饰符</h3><blockquote>
+<p>用来针对于当前标签的事件触发     ===========&gt; 只触发自己标签的上特定动作的事件     只关心自己标签上触发的事件 不监听事件冒泡</p>
+</blockquote>
+<pre><code class="html">&lt;!--只触发标签自身的事件--&gt;
+&lt;div class=&quot;aa&quot; @click.self=&quot;divClick&quot;&gt;
+  &lt;!--用来阻止事件冒泡--&gt;
+  &lt;input type=&quot;button&quot; value=&quot;按钮&quot;  @click.stop=&quot;btnClick&quot;&gt;
+  &lt;input type=&quot;button&quot; value=&quot;按钮1&quot; @click=&quot;btnClick1&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="8-4-once-事件修饰符"><a href="#8-4-once-事件修饰符" class="headerlink" title="8.4 once 事件修饰符"></a>8.4 once 事件修饰符</h3><blockquote>
+<p>once 一次作用:  就是让指定事件只触发一次</p>
+</blockquote>
+<pre><code class="html">    &lt;!--
+    .prevent : 用来阻止事件的默认行为
+    .once    : 用来只执行一次特定的事件
+    --&gt;
+    &lt;a href=&quot;http://www.baizhibest.com/&quot; @click.prevent.once=&quot;aClick&quot;&gt;百知教育&lt;/a&gt;
+</code></pre>
+<hr>
+<h2 id="9-按键修饰符"><a href="#9-按键修饰符" class="headerlink" title="9. 按键修饰符"></a>9. 按键修饰符</h2><blockquote>
+<p>作用: 用来与键盘中按键事件绑定在一起,用来修饰特定的按键事件的修饰符</p>
+</blockquote>
+<pre><code class="markdown"># 按键修饰符
+    .enter
+    .tab
+    .delete (捕获“删除”和“退格”键)
+    .esc
+    .space
+    .up
+    .down
+    .left
+    .right
+</code></pre>
+<h3 id="9-1-enter-回车键"><a href="#9-1-enter-回车键" class="headerlink" title="9.1 enter 回车键"></a>9.1 enter 回车键</h3><blockquote>
+<p>用来在触发回车按键之后触发的事件</p>
+</blockquote>
+<pre><code class="html"> &lt;input type=&quot;text&quot; v-model=&quot;msg&quot; @keyup.enter=&quot;keyups&quot;&gt;
+</code></pre>
+<h3 id="9-2-tab-键"><a href="#9-2-tab-键" class="headerlink" title="9.2 tab 键"></a>9.2 tab 键</h3><blockquote>
+<p>用来捕获到tab键执行到当前标签是才会触发</p>
+</blockquote>
+<pre><code class="html">&lt;input type=&quot;text&quot; @keyup.tab=&quot;keytabs&quot;&gt;
+</code></pre>
+<hr>
+<h2 id="10-Axios-基本使用"><a href="#10-Axios-基本使用" class="headerlink" title="10. Axios 基本使用"></a>10. Axios 基本使用</h2><h3 id="10-1-引言"><a href="#10-1-引言" class="headerlink" title="10.1 引言"></a>10.1 引言</h3><blockquote>
+<p><code>Axios</code> 是一个异步请求技术,核心作用就是用来在页面中发送异步请求,并获取对应数据在页面中渲染       页面局部更新技术  Ajax</p>
+</blockquote>
+<h3 id="10-2-Axios-第一个程序"><a href="#10-2-Axios-第一个程序" class="headerlink" title="10.2 Axios 第一个程序"></a>10.2 Axios 第一个程序</h3><p>中文网站:<a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">https://www.kancloud.cn/yunye/axios/234845</a></p>
+<p>安装: <a href="https://unpkg.com/axios/dist/axios.min.js" target="_blank" rel="noopener">https://unpkg.com/axios/dist/axios.min.js</a></p>
+<h4 id="10-2-1-GET方式的请求"><a href="#10-2-1-GET方式的请求" class="headerlink" title="10.2.1 GET方式的请求"></a>10.2.1 GET方式的请求</h4><pre><code class="js">      //发送GET方式请求
+    axios.get(&quot;http://localhost:8989/user/findAll?name=xiaochen&quot;).then(function(response){
+        console.log(response.data);
+    }).catch(function(err){
+        console.log(err);
+    });
+</code></pre>
+<h4 id="10-2-2-POST方式请求"><a href="#10-2-2-POST方式请求" class="headerlink" title="10.2.2 POST方式请求"></a>10.2.2 POST方式请求</h4><pre><code class="javascript">        //发送POST方式请求
+    axios.post(&quot;http://localhost:8989/user/save&quot;,{
+        username:&quot;xiaochen&quot;,
+        age:23,
+        email:&quot;xiaochen@zparkhr.com&quot;,
+        phone:13260426185
+    }).then(function(response){
+        console.log(response.data);
+    }).catch(function(err){
+        console.log(err);
+    });
+</code></pre>
+<h4 id="10-2-3-axios并发请求"><a href="#10-2-3-axios并发请求" class="headerlink" title="10.2.3 axios并发请求"></a>10.2.3 axios并发请求</h4><blockquote>
+<p><code>并发请求</code>:  将多个请求在同一时刻发送到后端服务接口,最后在集中处理每个请求的响应结果</p>
+</blockquote>
+<pre><code class="js"> //1.c
+    );//用来发送一组并发请求
+</code></pre>
+<hr>
+<h2 id="11-Vue-生命周期"><a href="#11-Vue-生命周期" class="headerlink" title="11. Vue 生命周期"></a>11. Vue 生命周期</h2><blockquote>
+<p> Vue 实例生命周期 ===&gt; java 对象生命周期(初始化阶段 运行阶段  销毁阶段)    <code>生命周期钩子</code>   ====&gt;  <code>生命周期函数</code> </p>
+<p> Vue实例从创建到销毁过程中自动触发一些列函数   ====&gt; Vue生命周期函数(钩子)</p>
+</blockquote>
+<p><img src="Vue实战.assets/lifecycle.png" alt="img"></p>
+<pre><code class="markdown"># Vue生命周期总结
+- 1.初始化阶段
+        beforeCreate(){ //1.生命周期中第一个函数,该函数在执行时Vue实例仅仅完成了自身事件的绑定和生命周期函数的初始化工作,Vue实例中还没有 Data el methods相关属性
+        console.log(&quot;beforeCreate: &quot;+this.msg);
+        },
+        created(){ //2.生命周期中第二个函数,该函数在执行时Vue实例已经初始化了data属性和methods中相关方法
+        console.log(&quot;created: &quot;+this.msg);
+        },
+        beforeMount(){//3.生命周期中第三个函数,该函数在执行时Vue将El中指定作用范围作为模板编译
+        console.log(&quot;beforeMount: &quot;+document.getElementById(&quot;sp&quot;).innerText);
+        },
+        mounted(){//4.生命周期中第四个函数,该函数在执行过程中,已经将数据渲染到界面中并且已经更新页面
+        console.log(&quot;Mounted: &quot;+document.getElementById(&quot;sp&quot;).innerText);
+        }
+
+- 2.运行阶段
+        beforeUpdate(){//5.生命周期中第五个函数,该函数是data中数据发生变化时执行 这个事件执行时仅仅是Vue实例中data数据变化页面显示的依然是原始数据
+        console.log(&quot;beforeUpdate:&quot;+this.msg);
+        console.log(&quot;beforeUpdate:&quot;+document.getElementById(&quot;sp&quot;).innerText);
+        },
+        updated(){    //6.生命周期中第六个函数,该函数执行时data中数据发生变化,页面中数据也发生了变化  页面中数据已经和data中数据一致
+        console.log(&quot;updated:&quot;+this.msg);
+        console.log(&quot;updated:&quot;+document.getElementById(&quot;sp&quot;).innerText);
+        },
+
+- 3.销毁阶段
+        beforeDestory(){//7.生命周期第七个函数,该函数执行时,Vue中所有数据 methods componet 都没销毁
+        },
+        destoryed(){ //8.生命周期的第八个函数,该函数执行时,Vue实例彻底销毁
+        }
+
+</code></pre>
+<hr>
+<h2 id="12-Vue中组件-component"><a href="#12-Vue中组件-component" class="headerlink" title="12. Vue中组件(component)"></a>12. Vue中组件(component)</h2><h3 id="12-1-组件作用"><a href="#12-1-组件作用" class="headerlink" title="12.1 组件作用"></a>12.1 组件作用</h3><p>组件作用: 用来减少Vue实例对象中代码量,日后在使用Vue开发过程中,可以根据 不同业务功能将页面中划分不同的多个组件,然后由多个组件去完成整个页面的布局,便于日后使用Vue进行开发时页面管理,方便开发人员维护。</p>
+<h3 id="12-2-组件使用"><a href="#12-2-组件使用" class="headerlink" title="12.2 组件使用"></a>12.2 组件使用</h3><h4 id="12-2-1-全局组件注册"><a href="#12-2-1-全局组件注册" class="headerlink" title="12.2.1 全局组件注册"></a>12.2.1 全局组件注册</h4><blockquote>
+<p>说明:全局组件注册给Vue实例,日后可以在任意Vue实例的范围内使用该组件</p>
+</blockquote>
+<pre><code class="js">//1.开发全局组件
+Vue.component(&#39;login&#39;,{
+  template:&#39;&lt;div&gt;&lt;h1&gt;用户登录&lt;/h1&gt;&lt;/div&gt;&#39;
+});
+//2.使用全局组件  在Vue实例范围内
+&lt;login&gt;&lt;/login&gt;  
+</code></pre>
+<pre><code class="markdown"># 注意:
+ - 1.Vue.component用来开发全局组件 参数1: 组件的名称  参数2: 组件配置{}  template:&#39;&#39;用来书写组件的html代码  template中必须有且只有一个root元素
+ - 2.使用时需要在Vue的作用范围内根据组件名使用全局组件
+ - 3.如果在注册组件过程中使用 驼峰命名组件的方式 在使用组件时 必须将驼峰的所有单词小写加入-线进行使用
+</code></pre>
+<h4 id="12-2-2-局部组件注册"><a href="#12-2-2-局部组件注册" class="headerlink" title="12.2.2 局部组件注册"></a>12.2.2 局部组件注册</h4><blockquote>
+<p>说明:通过将组件注册给对应Vue实例中一个components属性来完成组件注册,这种方式不会对Vue实例造成累加</p>
+</blockquote>
+<ul>
+<li>第一种开发方式</li>
+</ul>
+<pre><code class="js">//局部组件登录模板声明
+let login ={   //具体局部组件名称
+  template:&#39;&lt;div&gt;&lt;h2&gt;用户登录&lt;/h2&gt;&lt;/div&gt;&#39;
+};
+const app = new Vue({
+  el: &quot;#app&quot;,
+  data: {},
+  methods: {},
+  components:{  //用来注册局部组件
+    login:login  //注册局部组件
+  }
+});
+
+//局部组件使用 在Vue实例范围内
+&lt;login&gt;&lt;/login&gt;
+</code></pre>
+<ul>
+<li>第二种开发方式</li>
+</ul>
+<pre><code class="js">//1.声明局部组件模板  template 标签 注意:在Vue实例作用范围外声明
+  &lt;template id=&quot;loginTemplate&quot;&gt;
+      &lt;h1&gt;用户登录&lt;/h1&gt;
+  &lt;/template&gt;
+
+//2.定义变量用来保存模板配置对象
+    let login ={   //具体局部组件名称
+        template:&#39;#loginTemplate&#39;  //使用自定义template标签选择器即可
+    };
+
+//3.注册组件    
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {},
+        methods: {},
+        components:{  //用来注册局部组件
+            login:login  //注册局部组件
+        }
+    });
+
+ //4.局部组件使用 在Vue实例范围内
+     &lt;login&gt;&lt;/login&gt;
+</code></pre>
+<h3 id="12-3-Prop的使用"><a href="#12-3-Prop的使用" class="headerlink" title="12.3 Prop的使用"></a>12.3 Prop的使用</h3><p><code>作用:props用来给组件传递相应静态数据或者是动态数据的</code></p>
+<h4 id="12-3-1-通过在组件上声明静态数据传递给组件内部"><a href="#12-3-1-通过在组件上声明静态数据传递给组件内部" class="headerlink" title="12.3.1 通过在组件上声明静态数据传递给组件内部"></a>12.3.1 通过在组件上声明静态数据传递给组件内部</h4><pre><code class="js">//1.声明组件模板配置对象
+    let login = {
+        template:&quot;&lt;div&gt;&lt;h1&gt;欢迎:{{ userName }} 年龄:{{ age }}&lt;/h1&gt;&lt;/div&gt;&quot;,
+        props:[&#39;userName&#39;,&#39;age&#39;]  //props作用 用来接收使用组件时通过组件标签传递的数据
+    }
+
+//2.注册组件
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {},
+        methods: {},
+        components:{
+            login //组件注册
+        }
+    });
+
+//3.通过组件完成数据传递
+    &lt;login user-name=&quot;小陈&quot; age=&quot;23&quot;&gt;&lt;/login&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+            1.使用组件时可以在组件上定义多个属性以及对应数据
+            2.在组件内部可以使用props数组生命多个定义在组件上的属性名 日后可以在组件中通过{{ 属性名 }} 方式获取组件中属性值
+</code></pre>
+<h4 id="12-3-2-通过在组件上声明动态数据传递给组件内部"><a href="#12-3-2-通过在组件上声明动态数据传递给组件内部" class="headerlink" title="12.3.2 通过在组件上声明动态数据传递给组件内部"></a>12.3.2 通过在组件上声明动态数据传递给组件内部</h4><pre><code class="js">//1.声明组件模板对象
+    const login = {
+        template:&#39;&lt;div&gt;&lt;h2&gt;欢迎: {{ name }} 年龄:{{ age }}&lt;/h2&gt;&lt;/div&gt;&#39;,
+        props:[&#39;name&#39;,&#39;age&#39;]
+    }
+
+//2.注册局部组件
+    const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            username:&quot;小陈陈&quot;,
+            age:23
+        },
+        methods: {},
+        components:{
+            login //注册组件
+        }
+    });
+
+//3.使用组件
+     &lt;login :name=&quot;username&quot; :age=&quot;age&quot;&gt;&lt;/login&gt;  //使用v-bind形式将数据绑定Vue实例中data属性,日后data属性发生变化,组件内部数据跟着变化
+</code></pre>
+<h4 id="12-3-3-prop的单向数据流"><a href="#12-3-3-prop的单向数据流" class="headerlink" title="12.3.3 prop的单向数据流"></a>12.3.3 prop的单向数据流</h4><blockquote>
+<p>单向数据流:所有的 prop 都使得其父子 prop 之间形成了一个<strong>单向下行绑定</strong>：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。</p>
+</blockquote>
+<ul>
+<li>所有的 prop 都使得其父子 prop 之间形成了一个<strong>单向下行绑定</strong>：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。</li>
+</ul>
+<ul>
+<li>额外的，每次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你<strong>不</strong>应该在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。—摘自官网</li>
+</ul>
+<h3 id="12-4-组件中定义数据和事件使用"><a href="#12-4-组件中定义数据和事件使用" class="headerlink" title="12.4 组件中定义数据和事件使用"></a>12.4 组件中定义数据和事件使用</h3><h5 id="1-组件中定义属于组件的数据"><a href="#1-组件中定义属于组件的数据" class="headerlink" title="1. 组件中定义属于组件的数据"></a>1. 组件中定义属于组件的数据</h5><pre><code class="js">//组件声明的配置对象
+const login = {
+  template:&#39;&lt;div&gt;&lt;h1&gt;{{ msg }} 百知教育&lt;/h1&gt;&lt;ul&gt;&lt;li v-for=&quot;item,index in lists&quot;&gt;{{ index }}{{ item }}&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&#39;,
+  data(){   //使用data函数方式定义组件的数据   在templatehtml代码中通过插值表达式直接获取
+    return {
+      msg:&quot;hello&quot;,
+      lists:[&#39;java&#39;,&#39;spring&#39;,&#39;springboot&#39;]
+    }//组件自己内部数据
+  }
+}
+</code></pre>
+<h5 id="2-组件中事件定义"><a href="#2-组件中事件定义" class="headerlink" title="2.组件中事件定义"></a>2.组件中事件定义</h5><pre><code class="js"> const login={
+        template:&#39;&lt;div&gt;&lt;input type=&quot;button&quot; value=&quot;点我触发组件中事件&quot; @click=&quot;change&quot;&gt;&lt;/div&gt;&#39;,
+        data(){
+            return {
+                name:&#39;小陈&#39;
+            };
+        },
+        methods:{
+            change(){
+                alert(this.name)
+                alert(&#39;触发事件&#39;);
+            }
+        }
+    }
+</code></pre>
+<pre><code class="markdown"># 总结    
+        1.组件中定义事件和直接在Vue中定义事件基本一致 直接在组件内部对应的html代码上加入@事件名=函数名方式即可
+        2.在组件内部使用methods属性用来定义对应的事件函数即可,事件函数中this 指向的是当前组件的实例
+</code></pre>
+<h3 id="12-5-向子组件中传递事件并在子组件中调用该事件"><a href="#12-5-向子组件中传递事件并在子组件中调用该事件" class="headerlink" title="12.5 向子组件中传递事件并在子组件中调用该事件"></a>12.5 向子组件中传递事件并在子组件中调用该事件</h3><p><code>在子组件中调用传递过来的相关事件必须使用 this.$emit(&#39;函数名&#39;) 方式调用</code></p>
+<pre><code class="js">//1.声明组件
+    const login = {
+        template:&quot;&lt;div&gt;&lt;h1&gt;百知教育 {{ uname }}&lt;/h1&gt; &lt;input type=&#39;button&#39; value=&#39;点我&#39; @click=&#39;change&#39;&gt;&lt;/div&gt;&quot;,
+        data(){
+            return {
+                uname:this.name
+            }
+        },
+        props:[&#39;name&#39;],
+        methods:{
+            change(){
+                //调用vue实例中函数
+                this.$emit(&#39;aaa&#39;);  //调用组件传递过来的其他函数时需要使用 this.$emit(&#39;函数名调用&#39;)
+            }
+        }
+    }
+
+ //2.注册组件
+        const app = new Vue({
+        el: &quot;#app&quot;,
+        data: {
+            username:&quot;小陈&quot;
+        },
+        methods: {
+            findAll(){  //一个事件函数  将这个函数传递给子组件
+                alert(&#39;Vue 实例中定义函数&#39;);
+            }
+        },
+        components:{
+            login,//组件的注册
+        }
+    });
+
+//3.使用组件
+    &lt;login  @find=&quot;findAll&quot;&gt;&lt;/login&gt;    //=====&gt; 在组件内部使用  this.$emit(&#39;find&#39;)
+</code></pre>
+<hr>
+<h2 id="13-Vue中路由-Vue-Router"><a href="#13-Vue中路由-Vue-Router" class="headerlink" title="13.Vue中路由 (Vue Router)"></a>13.Vue中路由 (Vue Router)</h2><h4 id="13-1-路由"><a href="#13-1-路由" class="headerlink" title="13.1 路由"></a>13.1 路由</h4><p><code>路由:根据请求的路径按照一定的路由规则进行请求的转发从而帮助我们实现统一请求的管理</code></p>
+<h4 id="13-2-作用"><a href="#13-2-作用" class="headerlink" title="13.2 作用"></a>13.2 作用</h4><blockquote>
+<p> 用来在vue中实现组件之间的动态切换</p>
+</blockquote>
+<h4 id="13-3-使用路由"><a href="#13-3-使用路由" class="headerlink" title="13.3 使用路由"></a>13.3 使用路由</h4><ol>
+<li><h5 id="引入路由"><a href="#引入路由" class="headerlink" title="引入路由"></a>引入路由</h5><pre><code class="js">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&gt;&lt;/script&gt;  //vue 路由js
+</code></pre>
+</li>
+<li><h5 id="创建组件对象"><a href="#创建组件对象" class="headerlink" title="创建组件对象"></a>创建组件对象</h5><pre><code class="js">//声明组件模板
+const login = {
+  template:&#39;&lt;h1&gt;登录&lt;/h1&gt;&#39;
+};
+
+const register = {
+  template:&#39;&lt;h1&gt;注册&lt;/h1&gt;&#39;
+};
+
+</code></pre>
+</li>
+<li><h5 id="定义路由对象的规则"><a href="#定义路由对象的规则" class="headerlink" title="定义路由对象的规则"></a>定义路由对象的规则</h5><pre><code class="js"> //创建路由对象
+const router = new VueRouter({
+  routes:[
+    {path:&#39;/login&#39;,component:login},   //path: 路由的路径  component:路径对应的组件
+    {path:&#39;/register&#39;,component:register}
+  ]
+});
+</code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><h5 id="将路由对象注册到vue实例"><a href="#将路由对象注册到vue实例" class="headerlink" title="将路由对象注册到vue实例"></a>将路由对象注册到vue实例</h5><pre><code class="js">const app = new Vue({
+  el: &quot;#app&quot;,
+  data: {
+    username:&quot;小陈&quot;,
+  },
+  methods: {},
+  router:router   //设置路由对象
+});
+</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><h5 id="在页面中显示路由的组件"><a href="#在页面中显示路由的组件" class="headerlink" title="在页面中显示路由的组件"></a>在页面中显示路由的组件</h5><pre><code class="html">&lt;!--显示路由的组件--&gt;
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
+</li>
+<li><h5 id="根据连接切换路由"><a href="#根据连接切换路由" class="headerlink" title="根据连接切换路由"></a>根据连接切换路由</h5><pre><code class="html">&lt;a href=&quot;#/login&quot;&gt;点我登录&lt;/a&gt;
+&lt;a href=&quot;#/register&quot;&gt;点我注册&lt;/a&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="13-4-router-link使用"><a href="#13-4-router-link使用" class="headerlink" title="13.4 router-link使用"></a>13.4 router-link使用</h3><p><code>作用:用来替换我们在切换路由时使用a标签切换路由</code></p>
+<p><code>好处:就是可以自动给路由路径加入#不需要手动加入</code></p>
+<pre><code class="html">&lt;router-link to=&quot;/login&quot; tag=&quot;button&quot;&gt;我要登录&lt;/router-link&gt;
+&lt;router-link to=&quot;/register&quot; tag=&quot;button&quot;&gt;点我注册&lt;/router-link&gt;
+</code></pre>
+<pre><code class="markdown"># 总结:
+    1.router-link 用来替换使用a标签实现路由切换 好处是不需要书写#号直接书写路由路径
+    2.router-link to属性用来书写路由路径   tag属性:用来将router-link渲染成指定的标签
+</code></pre>
+<h3 id="13-5-默认路由"><a href="#13-5-默认路由" class="headerlink" title="13.5 默认路由"></a>13.5 默认路由</h3><p><code>作用:用来在第一次进入界面是显示一个默认的组件</code></p>
+<pre><code class="js">const router = new VueRouter({
+  routes:[
+    //{ path:&#39;/&#39;,component:login},
+    { path:&#39;/&#39;,redirect:&#39;/login&#39;},  //redirect: 用来当访问的是默认路由 &quot;/&quot; 时 跳转到指定的路由展示  推荐使用
+    { path:&#39;/login&#39;, component:login},
+    { path:&#39;/register&#39;, component:register},
+  ]
+});
+</code></pre>
+<h3 id="13-6-路由中参数传递"><a href="#13-6-路由中参数传递" class="headerlink" title="13.6 路由中参数传递"></a>13.6 路由中参数传递</h3><ul>
+<li>第一种方式传递参数 传统方式</li>
+</ul>
+<ol>
+<li><p>通过?号形式拼接参数</p>
+<pre><code class="html"> &lt;router-link to=&quot;/login?id=21&amp;name=zhangsan&quot;&gt;我要登录&lt;/router-link&gt;
+</code></pre>
+</li>
+<li><p>组件中获取参数</p>
+<pre><code class="js">const login = {
+  template:&#39;&lt;h1&gt;用户登录&lt;/h1&gt;&#39;,
+  data(){return {}},
+  methods:{},
+  created(){
+    console.log(&quot;=============&gt;&quot;+this.$route.query.id+&quot;======&gt;&quot;+this.$route.query.name);
+  }
+};
+</code></pre>
+</li>
+</ol>
+<ul>
+<li>第二种方式传递参数 restful</li>
+</ul>
+<ol>
+<li><p>通过使用路径方式传递参数</p>
+<pre><code class="js">&lt;router-link to=&quot;/register/24/张三&quot;&gt;我要注册&lt;/router-link&gt;
+var router = new VueRouter({
+  routes:[
+    {path:&#39;/register/:id/:name&#39;,component:register}   //定义路径中获取对应参数
+  ]
+});
+</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>组件中获取参数</p>
+<pre><code class="js">const register = {
+  template:&#39;&lt;h1&gt;用户注册{{ $route.params.name }}&lt;/h1&gt;&#39;,
+  created(){
+    console.log(&quot;注册组件中id:   &quot;+this.$route.params.id+this.$route.params.name);
+  }
+};
+</code></pre>
+</li>
+</ol>
+<h3 id="13-7-嵌套路由"><a href="#13-7-嵌套路由" class="headerlink" title="13.7 嵌套路由"></a>13.7 嵌套路由</h3><ol>
+<li><h5 id="声明最外层和内层路由"><a href="#声明最外层和内层路由" class="headerlink" title="声明最外层和内层路由"></a>声明最外层和内层路由</h5><pre><code class="js">&lt;template id=&quot;product&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;商品管理&lt;/h1&gt;
+
+        &lt;router-link to=&quot;/product/add&quot;&gt;商品添加&lt;/router-link&gt;
+        &lt;router-link to=&quot;/product/edit&quot;&gt;商品编辑&lt;/router-link&gt;
+
+        &lt;router-view&gt;&lt;/router-view&gt;
+
+    &lt;/div&gt;
+&lt;/template&gt;
+
+//声明组件模板
+const product={
+  template:&#39;#product&#39;
+};
+
+const add = {
+  template:&#39;&lt;h4&gt;商品添加&lt;/h4&gt;&#39;
+};
+
+const edit = {
+  template:&#39;&lt;h4&gt;商品编辑&lt;/h4&gt;&#39;
+};
+</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><h5 id="创建路由对象含有嵌套路由"><a href="#创建路由对象含有嵌套路由" class="headerlink" title="创建路由对象含有嵌套路由"></a>创建路由对象含有嵌套路由</h5><pre><code class="js">const router = new VueRouter({
+        routes:[
+            {
+                path:&#39;/product&#39;,
+                component:product,
+                children:[
+                    {path:&#39;add&#39;,component: add},
+                    {path:&#39;edit&#39;,component: edit},
+                ]
+            },
+        ]
+    });
+</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><h5 id="注册路由对象"><a href="#注册路由对象" class="headerlink" title="注册路由对象"></a>注册路由对象</h5><pre><code class="js">const app = new Vue({
+    el: &quot;#app&quot;,
+    data: {},
+    methods: {},
+    router,//定义路由对象
+});
+</code></pre>
+</li>
+<li><p>测试路由</p>
+<pre><code class="html">&lt;router-link to=&quot;/product&quot;&gt;商品管理&lt;/router-link&gt;
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
+</li>
+</ol>
+<hr>
+<h2 id="14-Vue-CLI-脚手架"><a href="#14-Vue-CLI-脚手架" class="headerlink" title="14. Vue CLI 脚手架"></a>14. Vue CLI 脚手架</h2><h3 id="14-1-什么是CLI"><a href="#14-1-什么是CLI" class="headerlink" title="14.1 什么是CLI"></a>14.1 什么是CLI</h3><p>命令行界面（英语：command-line interface，缩写：<em>CLI</em>）是在图形用户界面得到普及之前使用最为广泛的用户界面，它通常不支持鼠标，用户通过键盘输入指令，计算机接收到指令后，予以执行。也有人称之为字符用户界面（CUI）</p>
+<h3 id="14-2-什么是Vue-CLI-lt-gt-maven-项目构建工具"><a href="#14-2-什么是Vue-CLI-lt-gt-maven-项目构建工具" class="headerlink" title="14.2 什么是Vue CLI  &lt;====&gt;  (maven 项目构建工具)"></a>14.2 什么是Vue CLI  &lt;====&gt;  (maven 项目构建工具)</h3><p>Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统。 使用Vue 脚手架之后我们开发的页面将是一个完整系统(项目)。 前端系统</p>
+<h3 id="14-3-Vue-CLI优势"><a href="#14-3-Vue-CLI优势" class="headerlink" title="14.3 Vue CLI优势"></a>14.3 Vue CLI优势</h3><ul>
+<li>通过 <code>vue-cli</code> 搭建交互式的项目脚手架。       </li>
+<li>通过 <code>@vue/cli</code> + <code>@vue/cli-service-global</code> 快速开始零配置原型开发   </li>
+<li>一个运行时依赖 (<code>@vue/cli-service</code>)，该依赖：<ul>
+<li>可升级;</li>
+<li>基于 webpack 构建，并带有合理的默认配置；   webpack 前端打包工具  index.html   vue组件  用户组件   学生组件  ….. 路由   dist目录</li>
+<li>可以通过项目内的配置文件进行配置；      cli 项目配置文件  添加</li>
+<li>可以通过插件进行扩展。                            cli 项目里</li>
+</ul>
+</li>
+<li>一个丰富的官方插件集合，集成了前端生态中最好的工具。 webpack打包工具===&gt;dist目录  nodejs 服务器(tomcat java)  热部署插件  npm包</li>
+<li>一套完全图形化的创建和管理 Vue.js 项目的用户界面</li>
+</ul>
+<h3 id="14-4-Vue-CLI安装"><a href="#14-4-Vue-CLI安装" class="headerlink" title="14.4 Vue CLI安装"></a>14.4 Vue CLI安装</h3><h5 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1. 环境准备"></a>1. 环境准备</h5><pre><code class="markdown"># 1.下载nodejs
+    http://nodejs.cn/download/
+        windows系统:   .msi  安装包(exe)指定安装位置   .zip(压缩包)直接解压缩指定目录
+        mac os 系统:   .pkg  安装包格式自动配置环境变量  .tar.gz(压缩包)解压缩安装到指定名
+
+# 2.配置nodejs环境变量
+    1.windows系统:
+         计算上右键属性----&gt;  高级属性 ----&gt;环境变量 添加如下配置:
+        NODE_HOME=  nodejs安装目录
+        PATH    = xxxx;%NODE_HOME%
+    2.macos 系统
+        推荐使用.pkg安装直接配置node环境
+
+# 3.验证nodejs环境是否成功
+    node -v 
+
+# 4.npm介绍
+    node package mangager   nodejs包管理工具       前端主流技术  npm 进行统一管理
+    maven 管理java后端依赖    远程仓库(中心仓库)      阿里云镜像
+    npm   管理前端系统依赖     远程仓库(中心仓库)      配置淘宝镜像
+
+# 5.配置淘宝镜像
+      npm config set registry https://registry.npm.taobao.org
+      npm config get registry
+
+# 6.配置npm下载依赖位置
+     windows:
+        npm config set cache &quot;D:\nodereps\npm-cache&quot;
+        npm config set prefix &quot;D:\nodereps\npm_global&quot;
+     mac os:
+         npm config set cache &quot;/Users/chenyannan/dev/nodereps&quot;
+        npm config set prefix &quot;/Users/chenyannan/dev/nodereps&quot;
+
+# 7.验证nodejs环境配置
+    npm config ls
+    ; userconfig /Users/chenyannan/.npmrc
+    cache = &quot;/Users/chenyannan/dev/nodereps&quot;
+    prefix = &quot;/Users/chenyannan/dev/nodereps&quot;
+    registry = &quot;https://registry.npm.taobao.org/&quot;
+
+</code></pre>
+<h5 id="2-安装脚手架"><a href="#2-安装脚手架" class="headerlink" title="2.安装脚手架"></a>2.安装脚手架</h5><pre><code class="markdown"># 0.卸载脚手架
+    npm uninstall -g @vue/cli  //卸载3.x版本脚手架
+    npm uninstall -g vue-cli  //卸载2.x版本脚手架
+
+# 1.Vue Cli官方网站
+    https://cli.vuejs.org/zh/guide/
+
+# 2.安装vue Cli
+    npm install -g vue-cli
+
+</code></pre>
+<h5 id="3-第一个vue脚手架项目"><a href="#3-第一个vue脚手架项目" class="headerlink" title="3.第一个vue脚手架项目"></a>3.第一个vue脚手架项目</h5><pre><code class="markdown"># 1.创建vue脚手架第一个项目
+    vue init webpack 项目名
+# 2.创建第一个项目
+    hello     -------------&gt;项目名
+    -build  -------------&gt;用来使用webpack打包使用build依赖  构建一些依赖文件
+    -config -------------&gt;用来做整个项目配置目录   主要用来对 开发 测试 环境进行配置
+    -node_modules  ------&gt;用来管理项目中使用依赖
+    -src                     ------&gt;用来书写vue的源代码[重点]
+        +assets      ------&gt;用来存放静态资源 [重点]
+          components   ------&gt;用来书写Vue组件 [重点]
+          router             ------&gt;用来配置项目中路由[重点]
+          App.vue      ------&gt;项目中根组件[重点]
+          main.js      ------&gt;项目中主入口[重点]
+    -static        ------&gt;其它静态
+    -.babelrc      ------&gt; 将es6语法转为es5运行
+    -.editorconfig ------&gt; 项目编辑配置
+    -.gitignore    ------&gt; git版本控制忽略文件
+    -.postcssrc.js ------&gt; 源码相关js
+    -index.html    ------&gt; 项目主页
+    -package.json  ------&gt; 类似与pom.xml 依赖管理  jquery 不建议手动修改
+    -package-lock.json ----&gt; 对package.json加锁
+    -README.md         ----&gt; 项目说明文件
+
+# 3.如何运行在项目的根目录中执行
+    npm start 运行前端系统
+
+# 4.如何访问项目
+    http://localhost:8081    
+
+# 5.Vue Cli中项目开发方式
+     注意: 一切皆组件   一个组件中   js代码  html代码  css样式
+         1. VueCli开发方式是在项目中开发一个一个组件对应一个业务功能模块,日后可以将多个组件组合到一起形成一个前端系统
+         2. 日后在使用vue Cli进行开发时不再书写html,编写的是一个个组件(组件后缀.vue结尾的文件),日后打包时vue cli会将组件编译成运行的html文件      
+</code></pre>
+<h5 id="4-如何开发Vue脚手架"><a href="#4-如何开发Vue脚手架" class="headerlink" title="4.如何开发Vue脚手架"></a>4.如何开发Vue脚手架</h5><p><code>注意:在Vue cli 中一切皆组件</code></p>
+<hr>
+<h2 id="15-在脚手架中使用axios"><a href="#15-在脚手架中使用axios" class="headerlink" title="15.在脚手架中使用axios"></a>15.在脚手架中使用axios</h2><h3 id="15-1-安装axios"><a href="#15-1-安装axios" class="headerlink" title="15.1 安装axios"></a>15.1 安装axios</h3><pre><code class="markdown"># 1.安装axios
+    npm install axios --save
+
+# 2.配置main.js中引入axios
+    import axios from &#39;axios&#39;;
+    Vue.prototype.$http=axios;
+
+# 3.使用axios
+    在需要发送异步请求的位置:this.$http.get(&quot;url&quot;).then((res)=&gt;{}) this.$http.post(&quot;url&quot;).then((res)=&gt;{})
+</code></pre>
+<hr>
+<h2 id="16-Vue-Cli脚手架项目部署"><a href="#16-Vue-Cli脚手架项目部署" class="headerlink" title="16.Vue Cli脚手架项目部署"></a>16.Vue Cli脚手架项目部署</h2><pre><code class="markdown"># 1.在项目根目录中执行如下命令:
+    vue run build
+    注意:vue脚手架打包的项目必须在服务器上运行不能直接双击运行
+
+# 2.打包之后当前项目中变化
+    在打包之后项目中出现dist目录,dist目录就是vue脚手架项目生产目录或者说是直接部署目录
+</code></pre>
+<hr>
+<h2 id="17-VueX-状态管理"><a href="#17-VueX-状态管理" class="headerlink" title="17.VueX 状态管理"></a>17.VueX 状态管理</h2><h3 id="17-1-简介-amp-安装"><a href="#17-1-简介-amp-安装" class="headerlink" title="17.1 简介&amp;安装"></a>17.1 简介&amp;安装</h3><pre><code class="markdown"># 1.简介
+- Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，
+并以相应的规则保证状态以一种可预测的方式发生变化
+ -之前可以通过：v-bind绑定属性给子组件传参，@绑定函数给父组件传参 
+但是兄弟组件之前无法实现 只能用vuex
+# 2.安装vuex
+-    npm install vuex --save
+
+# 3.创建vue cli中创建store文件夹
+</code></pre>
+<p><img src="Vue实战.assets/image-20201226214407298.png" alt="image-20201226214407298"></p>
+<pre><code class="markdown"># 4.在stroe中创建index.js文件
+</code></pre>
+<pre><code class="javascript">import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+//1.安装vuex
+Vue.use(Vuex);
+//2.创建store对象
+const store = new Vuex.Store({
+
+});
+//3.暴露store对象
+export default store;
+</code></pre>
+<pre><code class="markdown"># 5.在main.js中引入stroe并注册到vue实例
+</code></pre>
+<pre><code class="javascript">import Vue from &#39;vue&#39;
+import App from &#39;./App&#39;
+import router from &#39;./router&#39;
+import store from &quot;./stroe&quot;;//引入store
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: &#39;#app&#39;,
+  router,
+  components: { App },
+  template: &#39;&lt;App/&gt;&#39;,
+  store,//注册状态
+})
+</code></pre>
+<h3 id="17-2-state属性"><a href="#17-2-state属性" class="headerlink" title="17.2 state属性"></a>17.2 state属性</h3><pre><code class="markdown"># 1.state属性
+- 作用: 用来全局定义一些共享的数据状态
+
+# 2.语法
+    const store = new Vuex.Store({
+        state:{
+            counter:0,//定义共享状态
+        },
+    }
+
+# 3.使用
+     {{$store.state.counter}} ===&gt; {{this.$store.state.counter}}
+</code></pre>
+<h3 id="17-3-mutations-属性"><a href="#17-3-mutations-属性" class="headerlink" title="17.3 mutations 属性"></a>17.3 mutations 属性</h3><pre><code class="markdown"># 1.mutations 属性
+- 作用: 用来定义对共享的数据修改的一系列函数
+
+# 2.语法
+    const store = new Vuex.Store({
+      state:{
+        counter:0,//定义共享状态
+      },
+      mutations:{
+        //增加
+        increment(state){
+          state.counter++
+        },
+        //减小
+        decrement(state){
+          state.counter--
+        }
+      }
+    });
+
+# 3.使用
+    this.$store.commit(&#39;decrement&#39;);
+    this.$store.commit(&#39;increment&#39;);
+
+# 4.mutations传递参数
+
+- a.定义带有参数的函数
+            mutations:{
+             //addCount 参数1:state 对象 参数2:自定义参数
+             addCount(state,counter){
+            console.log(counter);
+            return  state.counter += counter ;
+          }
+        }
+- b.调用时传递参数
+        this.$store.commit(&#39;addCount&#39;,11);
+</code></pre>
+<h3 id="17-4-getters-属性"><a href="#17-4-getters-属性" class="headerlink" title="17.4 getters 属性"></a>17.4 getters 属性</h3><pre><code class="markdown"># 1.getters 属性
+- 官方:  允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据    
+    它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
+- 作用: 用来定义对共享的数据的计算相关的一系列函数 相当于 computed 属性 会对结果进行缓存
+
+# 2.语法
+      getters:{
+      //平方
+      mathSqrts(state){
+        console.log(&quot;--------&quot;);
+        return state.counter*state.counter;
+      },
+      //乘以一个数字
+      mathSqrtsNumber(state,getters){
+        return getters.mathSqrts*3;
+      },
+      //传递参数
+      mathSqrtsNumbers(state,getters){
+        return function (number){
+          return  number;
+        }
+      }
+    }
+
+# 3.使用
+-        1.{{$store.getters.mathSqrts}}
+-   2.{{$store.getters.mathSqrtsNumber}}
+-   3.{{$store.getters.mathSqrtsNumbers(3)}}
+</code></pre>
+<hr>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://z3.ax1x.com/2021/04/20/cHUx1K.jpg"></li>
+                <li class="wechat-code"><img src="https://z3.ax1x.com/2021/04/20/cHamjS.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2020/03/10/Node.js爬虫/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cH6xIS.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cH6xIS.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                爬虫程序(疫情数据为例)</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/12/12/我和树的谈话/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://z3.ax1x.com/2021/04/20/cHaAht.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://z3.ax1x.com/2021/04/20/cHaAht.png">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                我与树的对话</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GdkxnYAVmodNOxeXOHgI1wtJ-gzGzoHsz",
+        appKey: "8o4jII7ObNKPoTKub7QyYjuR",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="hojun.cn" class="profile gravatar"><img src="https://z3.ax1x.com/2021/04/20/cHBToQ.png" itemprop="image" alt="Johnny Zhu" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="hojun.cn" itemprop="url" rel="author">Johnny Zhu</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>喜欢在午后读书</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 Johnny Zhu<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages</a>
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://z3.ax1x.com/2021/04/20/cHBToQ.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">雨中小屋</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="https://github.com/Johnny-zbb" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="/" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=1298120374&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="2799240535"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="auto"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+</body>
+</html>
