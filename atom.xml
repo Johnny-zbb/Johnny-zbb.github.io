@@ -61,15 +61,15 @@
   </entry>
   
   <entry>
-    <title>Vue笔记</title>
-    <link href="/2019/12/12/Vue%E7%AC%94%E8%AE%B0/"/>
-    <id>/2019/12/12/Vue笔记/</id>
-    <published>2019-12-12T14:16:01.000Z</published>
-    <updated>2021-04-26T04:29:37.533Z</updated>
+    <title>空间分析代码</title>
+    <link href="/2020/03/10/%E4%BB%A3%E7%A0%81/"/>
+    <id>/2020/03/10/代码/</id>
+    <published>2020-03-10T14:16:01.000Z</published>
+    <updated>2021-05-08T06:37:31.056Z</updated>
     
     <summary type="html">
     
-      学习Vue的笔记
+      普通克里金插值
     
     </summary>
     
@@ -101,6 +101,28 @@
       <category term="web" scheme="/tags/web/"/>
     
       <category term="生活" scheme="/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue笔记</title>
+    <link href="/2019/12/12/Vue%E7%AC%94%E8%AE%B0/"/>
+    <id>/2019/12/12/Vue笔记/</id>
+    <published>2019-12-12T14:16:01.000Z</published>
+    <updated>2021-04-26T04:29:37.533Z</updated>
+    
+    <summary type="html">
+    
+      学习Vue的笔记
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="编程" scheme="/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
