@@ -440,6 +440,175 @@ font-family: 字体名字, 备用字体名字;
     background-color: hsl(180, 80%, 25%);
   }
 </code></pre>
+<h2 id="图像变化Transform"><a href="#图像变化Transform" class="headerlink" title="图像变化Transform"></a>图像变化Transform</h2><h3 id="scale"><a href="#scale" class="headerlink" title="scale()"></a>scale()</h3><p>CSS 属性 transform 里面的 scale() 函数可以用来改变元素的显示比例。 下面的例子把页面的段落元素放大到了原来的 2 倍：</p>
+<pre><code>#ball {
+  transform: scale(2);
+}
+悬停时放大：
+div:hover{
+  transform:scale(2.1)
+}
+</code></pre><h3 id="skewX"><a href="#skewX" class="headerlink" title="skewX()"></a>skewX()</h3><p>它使选择的元素沿着 X 轴（横向）翻转指定的角度。</p>
+<pre><code>  #bottom {
+    transform: skewX(24deg);
+  }
+</code></pre><h3 id="skewY"><a href="#skewY" class="headerlink" title="skewY()"></a>skewY()</h3><p>它使选择的元素沿着 Y 轴（横向）翻转指定的角度。</p>
+<pre><code>  #bottom {
+    transform: skewY(24deg);
+  }
+</code></pre><h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><p>这是一个我COPY别人代码的时候看不懂的地方，今天终于搞定了。首先了解伪元素 ::before 和 ::after。 伪元素可以在所选元素之前或之后添加一些内容。 在下面的代码中，画一个心形，首先一开始有一个正方形，然后::before在上边画个半圆，::after在右边画个半圆，最后逆时针旋转45°。</p>
+<pre><code>&lt;style&gt;
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+  .heart::after {
+    background-color: pink;
+    content: &quot;&quot;;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: &quot;&quot;;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+&lt;/style&gt;
+&lt;div class=&quot;heart&quot;&gt;&lt;/div&gt;
+</code></pre><p><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528181307.jpg" width="30%"><br><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528181327.jpg" width="30%"></p>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><p>动画的实现分一下两步骤：<br>1.在元素样式中设置动画的：</p>
+<p>animation-name: 动画名称<br>animation-duration: 动画持续总时间<br>animation-iteration-count: 动画播放次数<br>animation-timing-function：动画定时器</p>
+<p>2.利用@keyframes定义不同帧（20%，50%，100%）的CSS的样式，实现动画的切换</p>
+<p><code>案例一：心跳</code></p>
+<pre><code>&lt;style&gt;
+  .back {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;//动画名称
+    animation-duration: 1s;//动画持续总时间
+    animation-iteration-count:infinite;//动画播放无数次，可以设置3 则播放三次停止
+  }
+
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;//动画名称
+    animation-duration: 1s;//动画持续总时间
+    animation-iteration-count:infinite; //动画播放无数次，可以设置3 则播放三次停止
+  }
+  .heart:after {
+    background-color: pink;
+    content: &quot;&quot;;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart:before {
+    background-color: pink;
+    content: &quot;&quot;;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+  //更换背景的动画
+  @keyframes backdiv {
+    50% {
+      background: #ffe6f2;
+    }
+  }
+  //更换背景的动画
+  @keyframes beat {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.6) rotate(-45deg);
+    }
+  }
+
+&lt;/style&gt;
+&lt;!--back是背景--&gt;
+&lt;div class=&quot;back&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;heart&quot;&gt;&lt;/div&gt;
+</code></pre><p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/Animation.gif" width="100%"></p>
+<p>***注：更改播放的时间可以修改动画中50%-&gt;20%;也可以直接改动画播放时间：animation-duration。注意两者区别<br><code>案例二</code><br>给 id 为 ball1 和 ball2 的元素添加 animation-timing-function，ball1 的属性值为 linear，ball2 的属性值为 ease-out。<br>它们的 animation-duration 都为 2 秒，注意观察它们在开始和结束时的不同。</p>
+<pre><code>&lt;style&gt;
+
+  .balls {
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left:27%;
+    animation-timing-function:linear;//线性变化
+  }
+  #ball2 {
+    left:56%;
+    animation-timing-function:ease-out;//先快后慢
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+
+&lt;/style&gt;
+
+&lt;div class=&quot;balls&quot; id=&quot;ball1&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;balls&quot; id=&quot;ball2&quot;&gt;&lt;/div&gt;
+</code></pre><p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/Animation2.gif" width="100%"></p>
 
         </div>
         <!-- .entry-content -->
