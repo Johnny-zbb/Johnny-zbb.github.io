@@ -302,7 +302,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/a3c829785d144b1392f4834aca6ab87a.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/a3c829785d144b1392f4834aca6ab87a.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/2d6eb26d900a4631817007b08e7bf93e.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/2d6eb26d900a4631817007b08e7bf93e.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -332,10 +332,10 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>之前一直用别人的图床来给博客调用图片，发现图床删除后无法复原而且图片名称与本地名称不符<br>因此自己开始搭建图床，腾讯云的对象存储提供了50G免费的储存，虽然只有半年时间，不过一块钱可以买一年<br>还是挺香的，而且cdn有20G免费加速流量不用白不用=v=，话不多说开始吧！<br>首先进入控制台，在左上角产品中选中对象存储<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528121337.jpg" width="30%"></p>
-<h2 id="创建储存桶"><a href="#创建储存桶" class="headerlink" title="创建储存桶"></a>创建储存桶</h2><p>创建储存桶，填写名称（英文），选地区，访问权限写公有读，私有写，这样博客就可以使用了。<br>内容安全看情况，因为要收费，一般博客也没啥见不得人的，所以没勾选。<br>创建完之后就会得到一个域名，这个域名可以访问照片。<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528121605_LI.jpg" width="30%"></p>
-<h2 id="设置防盗链"><a href="#设置防盗链" class="headerlink" title="设置防盗链"></a>设置防盗链</h2><p>创建后储存桶后，点击创建后的储存桶的配置管理，在安全管理中选择防盗链设置<br>防盗链是防止其他人通过你的借口来访问照片，导致大量流量的消耗，这个可是一大笔钱，一个G的流量五毛钱！<br>把你的博客地址输进白名单就好了，这样就只允许白名单里的ip访问你的照片，当然这样在本地编辑你的hexo博客也看不到照片了，只有部署网上才会看到。<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528122606.jpg" width="30%"><br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528122644.jpg" width="30%"></p>
-<h2 id="cdn加速"><a href="#cdn加速" class="headerlink" title="cdn加速"></a>cdn加速</h2><p>在控制台中，在左上角产品中选中内容分发网络，俗称cdn。<br>在域名管理中，加速域名写你的博客的域名（必须备案！Github的是不行的）。<br>源站配置中 配置类型选择COS源，地址就选择你的储存桶即可<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528123443_LI.jpg" width="30%"></p>
+          <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>之前一直用别人的图床来给博客调用图片，发现图床删除后无法复原而且图片名称与本地名称不符<br>因此自己开始搭建图床，腾讯云的对象存储提供了50G免费的储存，虽然只有半年时间，不过一块钱可以买一年<br>还是挺香的，而且cdn有20G免费加速流量不用白不用=v=，话不多说开始吧！<br>首先进入控制台，在左上角产品中选中对象存储<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528121337.jpg" width="100%"></p>
+<h2 id="创建储存桶"><a href="#创建储存桶" class="headerlink" title="创建储存桶"></a>创建储存桶</h2><p>创建储存桶，填写名称（英文），选地区，访问权限写公有读，私有写，这样博客就可以使用了。<br>内容安全看情况，因为要收费，一般博客也没啥见不得人的，所以没勾选。<br>创建完之后就会得到一个域名，这个域名可以访问照片。<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528121605_LI.jpg" width="100%"></p>
+<h2 id="设置防盗链"><a href="#设置防盗链" class="headerlink" title="设置防盗链"></a>设置防盗链</h2><p>创建后储存桶后，点击创建后的储存桶的配置管理，在安全管理中选择防盗链设置<br>防盗链是防止其他人通过你的借口来访问照片，导致大量流量的消耗，这个可是一大笔钱，一个G的流量五毛钱！<br>把你的博客地址输进白名单就好了，这样就只允许白名单里的ip访问你的照片，当然这样在本地编辑你的hexo博客也看不到照片了，只有部署网上才会看到。<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528122606.jpg" width="100%"><br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528122644.jpg" width="100%"></p>
+<h2 id="cdn加速"><a href="#cdn加速" class="headerlink" title="cdn加速"></a>cdn加速</h2><p>在控制台中，在左上角产品中选中内容分发网络，俗称cdn。<br>在域名管理中，加速域名写你的博客的域名（必须备案！Github的是不行的）。<br>源站配置中 配置类型选择COS源，地址就选择你的储存桶即可<br><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210528123443_LI.jpg" width="100%"></p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>虽然腾讯云有六个月的50G存储空间，但是下行访问流量是不送的！也就是说五毛一G，每日看你的流量扣费，欠费的话会注销你的储存桶。<br>新人有礼包可以压缩图片减少流量的消耗，自己做的图床也比较放心，而且可以用腾讯云的cosbrowser备份图片啥的，还挺方便就是阅览麻烦<br>可以自己做个管理系统，会好一点，又发现腾讯云的一些好玩的，挺有意思的~</p>
 
         </div>
