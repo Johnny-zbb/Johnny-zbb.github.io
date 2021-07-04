@@ -609,6 +609,159 @@ div:hover{
 &lt;div class=&quot;balls&quot; id=&quot;ball1&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;balls&quot; id=&quot;ball2&quot;&gt;&lt;/div&gt;
 </code></pre><p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/Animation2.gif" width="80%"></p>
+<h2 id="弹性盒子"><a href="#弹性盒子" class="headerlink" title="弹性盒子"></a>弹性盒子</h2><p>用一个div包裹多个div元素，在父元素中css代码添加 display：flex 即可，默认按照行排列</p>
+<p>常用属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>display</td>
+<td>指定HTML的元素盒子类型为flex</td>
+</tr>
+<tr>
+<td>flex-direction</td>
+<td>指定了弹性容器中子元素的排列方式</td>
+</tr>
+<tr>
+<td>justify-content</td>
+<td>设置弹性盒子元素在主轴方向上的对齐方式</td>
+</tr>
+<tr>
+<td>align-items</td>
+<td>设置弹性盒子元素在交叉轴（与主轴垂直）方向上的对齐方式。</td>
+</tr>
+<tr>
+<td>flex-wrap</td>
+<td>设置弹性盒子的子元素超出父容器时是否换行。</td>
+</tr>
+<tr>
+<td>align-content</td>
+<td>修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐</td>
+</tr>
+<tr>
+<td>flex-flow</td>
+<td>flex-direction 和 flex-wrap 的简写</td>
+</tr>
+<tr>
+<td>order</td>
+<td>设置弹性盒子的子元素排列顺序。</td>
+</tr>
+<tr>
+<td>align-self</td>
+<td>在弹性子元素上使用。覆盖容器的 align-items 属性。</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>设置弹性盒子的子元素如何分配空间。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>只要给<strong>父元素</strong>添加 <code>flex-direction</code> 属性，并把属性值设置为 row 或 column，即可横向排列或纵向排列它的所有子元素。其他可选值：</p>
+<ul>
+<li><code>row-reverse</code>  ：行逆排列</li>
+<li><code>column-reverse</code>  ：列逆排序</li>
+</ul>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>给<strong>父元素</strong>添加，可以改变其对齐方式，可选属性值：</p>
+<ul>
+<li><code>center</code> ：居中</li>
+<li><code>flex-start</code> ：从 flex 容器的起始位置开始排列项目。 对行来说是把项目移至左边， 对于列是把项目移至顶部。 如未设置 <code>justify-content</code> 的值，那么这就是默认值。                        </li>
+<li><code>flex-end</code> ：从 flex 容器的终止位置开始排列项目。 对行来说是把项目移至右边， 对于列是把项目移至底部。</li>
+<li><code>space-between</code> ：项目间保留一定间距地沿主轴居中排列。 第一个和最后一个项目被放置在容器边沿。 例如，在行中第一个项目会紧贴着容器左边，最后一个项目会紧贴着容器右边，然后其他项目均匀排布。</li>
+<li><code>space- around</code> ：与<code>space-between</code>相似，但头尾两个项目不会紧贴容器边缘，所有项目之间的空间均匀排布。</li>
+<li><code>space-evenly</code> ：头尾两个项目不会紧贴容器边缘，所有项目之间的空间均匀排布。</li>
+</ul>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>弹性容器中，与主轴垂直的叫做 <strong>cross axis（交叉轴）</strong>。 行的交叉轴是垂直的，列的交叉轴是水平的。</p>
+<p>CSS 中的 align-items 属性用来定义 flex 子元素沿交叉轴的对齐方式。 对行来说，定义的是元素的上下对齐方式； 对列来说，是定义元素的左右对齐方式。</p>
+<ul>
+<li><code>flex-start</code>：从 flex 容器的起始位置开始对齐项目。 对行来说，把项目移至容器顶部； 对列来说，是把项目移至容器左边。</li>
+<li><code>flex-end</code>：从 flex 容器的终止位置开始对齐项目。 对行来说，把项目移至容器底部； 对列来说，把项目移至容器右边。</li>
+<li><code>center</code>：把项目居中放置。 对行来说，垂直居中（项目距离顶部和底部的距离相等）； 对列来说，水平居中（项目距离左边和右边的距离相等）。</li>
+<li><code>stretch</code>：拉伸项目，填满 flex 容器。 例如，排成行的项目从容器顶部拉伸到底部。 如未设置align-items的值，那么这就是默认值。</li>
+<li><code>baseline</code>：沿基线对齐。 基线是文本相关的概念，可以认为它是字母排列的下端基准线。</li>
+</ul>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>在弹性盒子<strong>父元素</strong>中添加，可以将子元素换行展示，可选值：</p>
+<ul>
+<li><code>nowrap</code>：默认值，不换行。</li>
+<li><code>wrap</code>：如果排列以行为基准，就将行从上往下排列；如果排列以列为基准，就将列从左往右排列。</li>
+<li><code>wrap-reverse</code>：如果排列以行为基准，就将行从下往上排列；如果排列以列为基准，就将列从右往左排列</li>
+</ul>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>在子元素中添加，当弹性容器太小时，子元素会自动缩小。当容器的宽度小于里面所有子元素的宽度之和时，所有子元素都会自动压缩。比如，一个项目的 <code>flex-shrink</code> 属性值为 <code>1</code>，另一个项目的 <code>flex-shrink</code> 属性值为 <code>3</code>，那么后者相比前者会受到 <code>3</code> 倍压缩。</p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>与 <code>flex-shrink</code> 相对的是 <code>flex-grow</code>。如果一个项目的 <code>flex-grow</code> 属性值为 <code>1</code>，另一个项目的 <code>flex-grow</code> 属性值为 <code>3</code>，那么值为 <code>3</code> 的一个会较另一个扩大 3 倍。</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>为子元素设置了初始值，例如flex-basis:20em;</p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p><code>flex-grow</code>、<code>flex-shrink</code> 和 <code>flex-basis</code> 属性可以在 <code>flex</code> 中一并设置。</p>
+<p>例如，<code>flex: 1 0 10px;</code>  </p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>设置子元素的顺序，属性值如1，2，3…</p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>在子元素中设置，这个属性允许你调整单个子元素自己的对齐方式，而不会影响到全部子元素。 因为 <code>float</code>、<code>clear</code> 和 <code>vertical-align</code> 等调整对齐方式的属性都不能应用于 flex 子元素，所以这个属性显得十分有用。<code>align-self</code> 可设置的值与 <code>align-items</code> 的一样，并且它会覆盖 <code>align-items</code> 所设置的值。</p>
+<h2 id="CSS网格"><a href="#CSS网格" class="headerlink" title="CSS网格"></a>CSS网格</h2><p>用来弹性布局，比如换成手机设备，自动调整布局。</p>
+<h3 id="grid-template-columns"><a href="#grid-template-columns" class="headerlink" title="grid-template-columns"></a>grid-template-columns</h3><p>在一个网格容器中使用 <code>grid-template-columns</code> 属性。属性值的个数表示网格的列数，每个值表示相应的列宽度。</p>
+<pre><code class="css">.container {
+  display: grid;
+  grid-template-columns: 50px 50px;
+}
+</code></pre>
+<p>上述代码即是两列网格，且每列宽度为50px</p>
+<h3 id="grid-template-rows"><a href="#grid-template-rows" class="headerlink" title="grid-template-rows"></a>grid-template-rows</h3><p>与grid-template-columns同理，设置行的数和行宽。</p>
+<pre><code class="css">.container {
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-template-columns: 100px 100px;
+}
+</code></pre>
+<h3 id="网格的单位"><a href="#网格的单位" class="headerlink" title="网格的单位"></a>网格的单位</h3><p>在 CSS 网格中，可以使用绝对单位（如 <code>px</code>）或相对单位（如 <code>em</code>）来定义行或列的大小。 下面的单位也可以使用：</p>
+<p><code>fr</code>：设置列或行占剩余空间的比例，</p>
+<p><code>auto</code>：设置列宽或行高自动等于它的内容的宽度或高度，</p>
+<p><code>%</code>：将列或行调整为它的容器宽度或高度的百分比，</p>
+<pre><code class="css">grid-template-columns: auto 50px 10% 2fr 1fr;
+</code></pre>
+<p>这段代码添加了五个列。 第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。</p>
+<h3 id="网格的间距"><a href="#网格的间距" class="headerlink" title="网格的间距"></a>网格的间距</h3><p>设置列的间距：<code>grid-column-gap: 10px;</code></p>
+<p>设置行的间距：<code>grid-row-gap: 10px;</code></p>
+<p>同时设置（行间距10px， 列间距20px）：<code>grid-gap:10px 20px;</code></p>
+<h3 id="网格单元的空间大小"><a href="#网格单元的空间大小" class="headerlink" title="网格单元的空间大小"></a>网格单元的空间大小</h3><p>网格中，假想的水平线和垂直线被称为线（lines）。 这些线在网格的左上角从 1 开始编号，垂直线向右、水平线向下累加计数。</p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210703121259.jpg" width="80%"></p>
+<p>要设置一个网格项占据几列，你可以使用 <code>grid-column</code> 属性加上网格线条的编号来定义网格项开始和结束的位置。如下例子，将5号项目占用线2-4的位置</p>
+<pre><code class="html">&lt;style&gt;
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+
+  .item5 {
+    background: PaleGreen;
+    /* 只修改这一行下面的代码 */
+    grid-column: 2 / 4;
+    /* 只修改这一行上面的代码 */
+  }
+
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;item1&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;item2&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;item3&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;item4&quot;&gt;4&lt;/div&gt;
+  &lt;div class=&quot;item5&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110029.jpg" width="80%"></p>
+<p>要设置一个网格项占据几行，你可以使用 <code>grid-row</code>属性加上网格线条的编号来定义网格项开始和结束的位置。添加代码：grid-row:2/4</p>
+<p>效果如图：</p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110648.jpg" width="80%"></p>
 
         </div>
         <!-- .entry-content -->
@@ -658,15 +811,15 @@ div:hover{
           
             <div class="post-nepre half next">
           
-            <a href="/2020/11/10/基于AI的疫情智能分析系统/" rel="next">
+            <a href="/2021/05/26/网页响应式设计/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/0c0f3f16880511ebb6edd017c2d2eca2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/0c0f3f16880511ebb6edd017c2d2eca2.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/1dbc43f4880511ebb6edd017c2d2eca2.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/1dbc43f4880511ebb6edd017c2d2eca2.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                基于AI的疫情智能分析系统（国赛二等奖）</h3>
+                网页响应式设计</h3>
                 <hr>
               </div>
             </a>

@@ -43,11 +43,35 @@
     <link href="/2021/05/26/CSS%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     <id>/2021/05/26/CSS基础知识/</id>
     <published>2021-05-26T10:16:01.000Z</published>
-    <updated>2021-05-28T10:55:02.509Z</updated>
+    <updated>2021-07-04T15:22:37.695Z</updated>
     
     <summary type="html">
     
       CSS复习
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="编程" scheme="/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="前端" scheme="/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页响应式设计</title>
+    <link href="/2021/05/26/%E7%BD%91%E9%A1%B5%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1/"/>
+    <id>/2021/05/26/网页响应式设计/</id>
+    <published>2021-05-26T10:16:01.000Z</published>
+    <updated>2021-06-02T12:40:31.190Z</updated>
+    
+    <summary type="html">
+    
+      网页响应式
     
     </summary>
     
@@ -107,28 +131,6 @@
   </entry>
   
   <entry>
-    <title>Vue笔记</title>
-    <link href="/2019/12/12/Vue%E7%AC%94%E8%AE%B0/"/>
-    <id>/2019/12/12/Vue笔记/</id>
-    <published>2019-12-12T14:16:01.000Z</published>
-    <updated>2021-05-26T14:57:58.937Z</updated>
-    
-    <summary type="html">
-    
-      学习Vue的笔记
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="/tags/web/"/>
-    
-      <category term="编程" scheme="/tags/%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我与树的对话</title>
     <link href="/2019/12/12/%E6%88%91%E5%92%8C%E6%A0%91%E7%9A%84%E8%B0%88%E8%AF%9D/"/>
     <id>/2019/12/12/我和树的谈话/</id>
@@ -147,6 +149,28 @@
       <category term="web" scheme="/tags/web/"/>
     
       <category term="生活" scheme="/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue笔记</title>
+    <link href="/2019/12/12/Vue%E7%AC%94%E8%AE%B0/"/>
+    <id>/2019/12/12/Vue笔记/</id>
+    <published>2019-12-12T14:16:01.000Z</published>
+    <updated>2021-05-26T14:57:58.937Z</updated>
+    
+    <summary type="html">
+    
+      学习Vue的笔记
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="编程" scheme="/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -215,6 +239,30 @@
       <category term="web" scheme="/tags/web/"/>
     
       <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于死亡</title>
+    <link href="/2018/03/26/%E5%85%B3%E4%BA%8E%E6%AD%BB%E4%BA%A1/"/>
+    <id>/2018/03/26/关于死亡/</id>
+    <published>2018-03-26T14:16:01.000Z</published>
+    <updated>2021-06-04T09:03:38.208Z</updated>
+    
+    <summary type="html">
+    
+      胡思乱想
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="web" scheme="/tags/web/"/>
+    
+      <category term="悦读" scheme="/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
