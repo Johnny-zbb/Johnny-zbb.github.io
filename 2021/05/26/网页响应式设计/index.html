@@ -48,7 +48,7 @@
   /*End of Initial Variables*/
   </script>
   <script type="text/javascript">
-  var bg = "https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/0c135493881611ebb6edd017c2d2eca2.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/09c045084b254d4199b2f4d26b5ae7d0.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/346e2904880f11ebb6edd017c2d2eca2.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/80bc2d17e4624969b592e9a60d2c7472.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/8488abf37bf946809df3e07a0532e1fe.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/96c6478f880e11ebb6edd017c2d2eca2.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/9accf1166a65430ead9f87b45ab89b81.jpg".split(",");
+  var bg = "https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/0c135493881611ebb6edd017c2d2eca2.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/09c045084b254d4199b2f4d26b5ae7d0.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/346e2904880f11ebb6edd017c2d2eca2.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/9ee60516518342498404d31b301dcfd0.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/8488abf37bf946809df3e07a0532e1fe.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/266df19360f440a280a5b43248599880.jpg,https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/9accf1166a65430ead9f87b45ab89b81.jpg".split(",");
   var bgindex = Math.floor(Math.random()*bg.length);
   if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
     alert('朋友，IE浏览器未适配哦~');
@@ -302,7 +302,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/1dbc43f4880511ebb6edd017c2d2eca2.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/1dbc43f4880511ebb6edd017c2d2eca2.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/3ae8eef3e3214cccbaca6dba3c82f5a8.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/3ae8eef3e3214cccbaca6dba3c82f5a8.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -445,6 +445,13 @@ p{
 <h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>设置子元素的顺序，属性值如1，2，3…</p>
 <h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>在子元素中设置，这个属性允许你调整单个子元素自己的对齐方式，而不会影响到全部子元素。 因为 <code>float</code>、<code>clear</code> 和 <code>vertical-align</code> 等调整对齐方式的属性都不能应用于 flex 子元素，所以这个属性显得十分有用。<code>align-self</code> 可设置的值与 <code>align-items</code> 的一样，并且它会覆盖 <code>align-items</code> 所设置的值。</p>
 <h2 id="CSS网格"><a href="#CSS网格" class="headerlink" title="CSS网格"></a>CSS网格</h2><p>用来弹性布局，比如换成手机设备，自动调整布局。</p>
+<h3 id="网格的单位"><a href="#网格的单位" class="headerlink" title="网格的单位"></a>网格的单位</h3><p>在 CSS 网格中，可以使用绝对单位（如 <code>px</code>）或相对单位（如 <code>em</code>）来定义行或列的大小。 下面的单位也可以使用：</p>
+<p><code>fr</code>：设置列或行占剩余空间的比例，</p>
+<p><code>auto</code>：设置列宽或行高自动等于它的内容的宽度或高度，</p>
+<p><code>%</code>：将列或行调整为它的容器宽度或高度的百分比，</p>
+<pre><code class="css">grid-template-columns: auto 50px 10% 2fr 1fr;
+</code></pre>
+<p>这段代码添加了五个列。 第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。</p>
 <h3 id="设置行列"><a href="#设置行列" class="headerlink" title="设置行列"></a>设置行列</h3><h4 id="grid-template-columns"><a href="#grid-template-columns" class="headerlink" title="grid-template-columns"></a>grid-template-columns</h4><p>在一个网格容器中使用 <code>grid-template-columns</code> 属性。属性值的个数表示网格的列数，每个值表示相应的列宽度。</p>
 <pre><code class="css">.container {
   display: grid;
@@ -469,21 +476,13 @@ p{
 <p>效果相当于：</p>
 <p><code>grid-template-columns: 1fr 50px 1fr 50px 20px;</code></p>
 <p><strong>注意：</strong><code>1fr 50px</code> 重复了两次，后面跟着 20px。</p>
-<h5 id="auto-fill弹性布局"><a href="#auto-fill弹性布局" class="headerlink" title="auto-fill弹性布局"></a>auto-fill弹性布局</h5><p>repeat 方法带有一个名为自动填充（auto-fill）的功能。 它的功能是根据容器的大小，尽可能多地放入指定大小的行或列。 你可以通过结合 <code>auto-fill</code> 和 <code>minmax</code> 来更灵活地布局。</p>
+<h4 id="auto-fill弹性布局"><a href="#auto-fill弹性布局" class="headerlink" title="auto-fill弹性布局"></a>auto-fill弹性布局</h4><p>repeat 方法带有一个名为自动填充（auto-fill）的功能。 它的功能是根据容器的大小，尽可能多地放入指定大小的行或列。 你可以通过结合 <code>auto-fill</code> 和 <code>minmax</code> 来更灵活地布局。</p>
 <pre><code class="css">repeat(auto-fill, minmax(60px, 1fr));
 </code></pre>
-<p>auto-fiit弹性布局</p>
-<p><code>auto-fit</code> 效果几乎和 <code>auto-fill</code> 一样。 不同点仅在于，当容器的大小大于各网格项之和时，<code>auto-fill</code> 会持续地在一端放入空行或空列，这样就会使所有网格项挤到另一边；而 <code>auto-fit</code> 则不会在一端放入空行或空列，而是会将所有网格项拉伸至合适的大小。</p>
+<h4 id="auto-fiit弹性布局"><a href="#auto-fiit弹性布局" class="headerlink" title="auto-fiit弹性布局"></a>auto-fiit弹性布局</h4><p><code>auto-fit</code> 效果几乎和 <code>auto-fill</code> 一样。 不同点仅在于，当容器的大小大于各网格项之和时，<code>auto-fill</code> 会持续地在一端放入空行或空列，这样就会使所有网格项挤到另一边；而 <code>auto-fit</code> 则不会在一端放入空行或空列，而是会将所有网格项拉伸至合适的大小。</p>
 <p>对比如下，左侧为auto-fill，右侧为auto-fit</p>
 <p><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135535.jpg" width="40%"></p>
 <p><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135548.jpg" width="40%"></p>
-<h3 id="网格的单位"><a href="#网格的单位" class="headerlink" title="网格的单位"></a>网格的单位</h3><p>在 CSS 网格中，可以使用绝对单位（如 <code>px</code>）或相对单位（如 <code>em</code>）来定义行或列的大小。 下面的单位也可以使用：</p>
-<p><code>fr</code>：设置列或行占剩余空间的比例，</p>
-<p><code>auto</code>：设置列宽或行高自动等于它的内容的宽度或高度，</p>
-<p><code>%</code>：将列或行调整为它的容器宽度或高度的百分比，</p>
-<pre><code class="css">grid-template-columns: auto 50px 10% 2fr 1fr;
-</code></pre>
-<p>这段代码添加了五个列。 第一列的宽与它的内容宽度相等；第二列宽 50px；第三列宽是它容器的 10%；最后两列，将剩余的宽度平均分成三份，第四列占两份，第五列占一份。</p>
 <h3 id="网格的间距"><a href="#网格的间距" class="headerlink" title="网格的间距"></a>网格的间距</h3><p>设置列的间距：<code>grid-column-gap: 10px;</code></p>
 <p>设置行的间距：<code>grid-row-gap: 10px;</code></p>
 <p>同时设置（行间距10px， 列间距20px）：<code>grid-gap:10px 20px;</code></p>
@@ -579,6 +578,76 @@ p{
 </code></pre>
 <p>首先在父元素中设置grid-template-areas，然后在子元素中设置grid-area: footer;  即可让该单位对应到指定区域。效果如下，让item5到底部去：</p>
 <p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706132813.jpg" width="80%"></p>
+<h3 id="使用媒体查询创建响应式布局"><a href="#使用媒体查询创建响应式布局" class="headerlink" title="使用媒体查询创建响应式布局"></a>使用媒体查询创建响应式布局</h3><pre><code class="html">&lt;style&gt;
+  .item1 {
+    background: LightSkyBlue;
+    grid-area: header;
+  }
+
+  .item2 {
+    background: LightSalmon;
+    grid-area: advert;
+  }
+
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+  }
+
+  .item4 {
+    background: lightpink;
+    grid-area: footer;
+  }
+
+  .container {
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      &quot;header&quot;
+      &quot;advert&quot;
+      &quot;content&quot;
+      &quot;footer&quot;;
+  }
+
+  @media (min-width: 300px){
+    .container{
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        &quot;advert header&quot;
+        &quot;advert content&quot;
+        &quot;advert footer&quot;;
+    }
+  }
+
+  @media (min-width: 400px){
+    .container{
+      grid-template-areas:
+      /* 只修改这一行下面的代码 */
+        &quot;header header&quot;
+        &quot;advert content&quot;
+        &quot;footer footer&quot;;
+      /* 只修改这一行上面的代码 */
+    }
+  }
+&lt;/style&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;item1&quot;&gt;header&lt;/div&gt;
+  &lt;div class=&quot;item2&quot;&gt;advert&lt;/div&gt;
+  &lt;div class=&quot;item3&quot;&gt;content&lt;/div&gt;
+  &lt;div class=&quot;item4&quot;&gt;footer&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>当网页可视区域的宽不小于 <code>400px</code> 时，请让 header 区域完全占据最顶行，footer 区域完全占据最底行:</p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140504.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140514.jpg" width="80%"></p>
 
         </div>
         <!-- .entry-content -->
