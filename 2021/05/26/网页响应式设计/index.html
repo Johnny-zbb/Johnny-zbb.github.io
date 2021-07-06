@@ -481,13 +481,13 @@ p{
 </code></pre>
 <h4 id="auto-fiit弹性布局"><a href="#auto-fiit弹性布局" class="headerlink" title="auto-fiit弹性布局"></a>auto-fiit弹性布局</h4><p><code>auto-fit</code> 效果几乎和 <code>auto-fill</code> 一样。 不同点仅在于，当容器的大小大于各网格项之和时，<code>auto-fill</code> 会持续地在一端放入空行或空列，这样就会使所有网格项挤到另一边；而 <code>auto-fit</code> 则不会在一端放入空行或空列，而是会将所有网格项拉伸至合适的大小。</p>
 <p>对比如下，左侧为auto-fill，右侧为auto-fit</p>
-<p><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135535.jpg" width="40%"></p>
-<p><img style="margin: auto;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135548.jpg" width="40%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135535.jpg" width="40%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706135548.jpg" width="40%"></p>
 <h3 id="网格的间距"><a href="#网格的间距" class="headerlink" title="网格的间距"></a>网格的间距</h3><p>设置列的间距：<code>grid-column-gap: 10px;</code></p>
 <p>设置行的间距：<code>grid-row-gap: 10px;</code></p>
 <p>同时设置（行间距10px， 列间距20px）：<code>grid-gap:10px 20px;</code></p>
 <h3 id="网格单元的空间大小"><a href="#网格单元的空间大小" class="headerlink" title="网格单元的空间大小"></a>网格单元的空间大小</h3><p>网格中，假想的水平线和垂直线被称为线（lines）。 这些线在网格的左上角从 1 开始编号，垂直线向右、水平线向下累加计数。</p>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210703121259.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210703121259.jpg" width="40%"></p>
 <p>要设置一个网格项占据几列，你可以使用 <code>grid-column</code> 属性加上网格线条的编号来定义网格项开始和结束的位置。如下例子，将5号项目占用线2-4的位置</p>
 <pre><code class="html">&lt;style&gt;
   .item1{background:LightSkyBlue;}
@@ -522,12 +522,12 @@ p{
   &lt;div class=&quot;item5&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110029.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110029.jpg" width="40%"></p>
 <p>要设置一个网格项占据几行，你可以使用 <code>grid-row</code>属性加上网格线条的编号来定义网格项开始和结束的位置。添加代码：grid-row:2/4</p>
 <p><strong>简写方式</strong>：grid-area: 2/2/4/4;</p>
 <p><code>grid-area: 开始水平线 / 开始垂直线 / 结束水平线 / 结束垂直线;</code></p>
 <p>效果如图：</p>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110648.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210704110648.jpg" width="40%"></p>
 <h3 id="空间对齐"><a href="#空间对齐" class="headerlink" title="空间对齐"></a>空间对齐</h3><h4 id="justify-self"><a href="#justify-self" class="headerlink" title="justify-self"></a>justify-self</h4><p>CSS 网格中，每个网格项的内容分别位于被称为单元格（cell）的框内。 使用网格项的 <code>justify-self</code> 属性，设置其内容的位置在单元格内沿水平轴的对齐方式。 默认情况下，这个属性的值是 <code>stretch</code>，这将使内容占满整个单元格的宽度。 该 CSS 网格属性也可以使用其他的值：</p>
 <ul>
 <li><code>start</code>：使内容在单元格左侧对齐</li>
@@ -577,7 +577,7 @@ p{
 &lt;/div&gt;
 </code></pre>
 <p>首先在父元素中设置grid-template-areas，然后在子元素中设置grid-area: footer;  即可让该单位对应到指定区域。效果如下，让item5到底部去：</p>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706132813.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706132813.jpg" width="40%"></p>
 <h3 id="使用媒体查询创建响应式布局"><a href="#使用媒体查询创建响应式布局" class="headerlink" title="使用媒体查询创建响应式布局"></a>使用媒体查询创建响应式布局</h3><pre><code class="html">&lt;style&gt;
   .item1 {
     background: LightSkyBlue;
@@ -646,8 +646,8 @@ p{
 &lt;/div&gt;
 </code></pre>
 <p>当网页可视区域的宽不小于 <code>400px</code> 时，请让 header 区域完全占据最顶行，footer 区域完全占据最底行:</p>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140504.jpg" width="80%"></p>
-<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140514.jpg" width="80%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140504.jpg" width="40%"></p>
+<p><img style="margin: auto;display: block;" src="https://blog-1300717260.cos.ap-shanghai.myqcloud.com/blog-pic/20210706140514.jpg" width="40%"></p>
 
         </div>
         <!-- .entry-content -->
