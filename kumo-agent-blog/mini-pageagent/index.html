@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kumo Mini PageAgent — 用 DDD 与深模块原则构建的交互式 Browser Agent 工程实验。">
+  <title>Mini PageAgent · Kumo Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="glow"></div>
+  <header class="site-nav"><a class="brand" href="../"><span class="brand-icon">✳</span><span>Kumo <em>/ Agent Notes</em></span></a><div class="nav-actions"><span class="mini-label">INTERACTIVE ENGINEERING LAB</span><a href="../">← 返回博客</a></div></header>
+  <main class="shell">
+    <div class="hero"><div class="eyebrow">EXPERIMENT 001 · BROWSER AGENT</div><h1>让 Agent 亲自<span>操作页面。</span></h1><p>一块真正可操作的云控制台沙盒。观察 DOM、规划动作、通过 Stable Ref 点击与输入，再验证结果。每一步都公开可见。</p><div class="hero-tags"><span>DDD</span><span>Deep Modules</span><span>Observe → Decide → Act → Verify</span><span>无需 API Key</span></div></div>
+    <div class="hint"><strong>关于这个版本</strong><span>使用确定性任务规划器（非 LLM），仅操作本页虚构数据。真实 DOM 感知与执行复用 kiki-anti 的 dom-sdk；规划器可替换为 LLM 适配器。</span></div>
+    <div class="layout">
+      <section class="console panel" id="workspace" data-filter="all" aria-label="云资源操作沙盒">
+        <div class="panel-top"><div><div class="eyebrow">SIMULATED CLOUD CONSOLE</div><h2>弹性云服务器 ECS</h2><p>实验用虚构实例 · 操作即时反馈</p></div><button class="reset" id="resetBtn" type="button">↺ 重置数据</button></div>
+        <div class="stats"><div class="metric"><span>总实例数</span><strong id="totalCount">4</strong></div><div class="metric"><span>运行中</span><strong id="runningCount">3</strong></div><div class="metric"><span>区域</span><strong>03</strong></div></div>
+        <div class="toolbar"><div class="filters"><button type="button" data-filter="all" aria-label="全部实例" aria-pressed="true">全部实例</button><button type="button" data-filter="running" aria-label="运行中" aria-pressed="false">运行中</button></div><label class="search"><span>⌕</span><input id="searchBox" aria-label="搜索实例" placeholder="搜索实例名称…" autocomplete="off" /></label><button type="button" class="create" id="createBtn" aria-label="创建实例">＋ 创建实例</button></div>
+        <div class="table-wrap"><table><thead><tr><th>实例名称</th><th>区域</th><th>规格</th><th>状态</th><th>操作</th></tr></thead><tbody id="instanceRows"></tbody></table><div id="emptyState" class="empty" hidden>没有符合筛选条件的实例</div></div>
+        <div class="table-foot"><span>这是一块独立沙盒，不会访问真实云资源</span><span id="rowCount">4 / 4 实例</span></div>
+        <div id="createDialog" class="dialog" hidden><div class="dialog-card"><div class="dialog-title">创建 ECS 实例 <span>DEMO</span></div><label for="instanceName">实例名称</label><input id="instanceName" aria-label="实例名称" placeholder="例如 Kumo-Lab-05" maxlength="25"><p id="formError" class="form-error"></p><div class="dialog-actions"><button type="button" id="cancelCreate">取消</button><button type="button" id="confirmCreate" aria-label="确认创建">确认创建</button></div></div></div>
+      </section>
+      <aside class="agent panel"><div class="agent-title"><div class="agent-orb">✦</div><div><div class="eyebrow">AUTOMATION AGENT</div><h2>Kumo Mini Agent</h2></div><span class="status" data-kind="idle" id="agentStatus">初始化</span></div>
+        <label class="task-label" for="taskInput">描述你想在左侧完成的任务</label><textarea id="taskInput" rows="3" spellcheck="false">创建一个名为 Kumo-Lab-05 的实例</textarea>
+        <div class="task-actions"><button type="button" id="runBtn" class="start">▶ 运行任务</button><button type="button" id="stopBtn" class="stop">■ 停止</button></div>
+        <div class="samples-title">试试这些任务</div><div class="samples"><button data-task="只看运行中的实例">筛选运行中 ↗</button><button data-task="搜索 Agent">搜索 Agent ↗</button><button data-task="创建一个名为 Kumo-Lab-05 的实例">创建实例 ↗</button><button data-task="停止 Kumo-Web-01">停止实例 ↗</button><button data-task="启动 Agent-Worker-02">启动实例 ↗</button></div>
+        <div class="trace-title"><span>Execution Trace</span><small><span id="stepCount">0</span> events</small></div><div id="traceLog" class="trace-log" aria-live="polite"><div class="trace-empty">运行任务后，Observe / Plan / Act / Verify 记录将出现在这里。</div></div>
+      </aside>
+    </div>
+    <section class="below"><div class="snapshot panel"><div class="snapshot-head"><h2>DOM Semantic Snapshot</h2><span>kiki-anti / dom-sdk</span></div><pre id="snapshotText">运行任务后显示 dom-sdk 语义快照</pre></div><div class="principles panel"><div class="eyebrow">THE DESIGN BEHIND THE DEMO</div><h2>复杂度藏在模块内部，<br>简单接口留给调用方。</h2><div class="rule"><b>01 / Domain</b><span>任务目标与下一步决策，不知道 DOM 是什么。</span></div><div class="rule"><b>02 / Application</b><span>AgentRunner 隐藏观察、执行、验证和中断流程。</span></div><div class="rule"><b>03 / Infrastructure</b><span>DomSdkPagePort 隔离 SDK、稳定 Ref 和页面动作。</span></div><a href="https://github.com/Johnny-zbb" target="_blank" rel="noopener noreferrer">查看研究仓库 ↗</a></div></section>
+    <footer>© Kumo Agent Notes · A small, observable, honest experiment.<a href="../">更多工程笔记 ↗</a></footer>
+  </main>
+  <script src="./vendor/dom-sdk.js"></script>
+  <script type="module" src="./main.js"></script>
+</body></html>
